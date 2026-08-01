@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Xcode kullanıcı verisi
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# SPM
+.build/
+.swiftpm/
+Packages/AnaKarakterKit/.build/
+Packages/AnaKarakterKit/.swiftpm/
+
+# Derleme çıktıları
+DerivedData/
+build/
+
+# Test/araç artıkları
+*.profraw
+*.xcresult

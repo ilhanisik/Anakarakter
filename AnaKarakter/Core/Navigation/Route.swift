@@ -1,0 +1,3 @@
+/// Tip güvenli navigasyon rotaları (CLAUDE.md: NavigationStack + Route + Router).
+/// Faz 2'de gerçek ekran rotaları eklenir: yıl akışı, karar, jenerik, arşiv…
+enum Route: Hashable {}

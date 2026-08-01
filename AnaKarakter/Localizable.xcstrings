@@ -1,0 +1,40 @@
+{
+  "sourceLanguage" : "tr",
+  "strings" : {
+    "menu.phase0.status" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phase 0 — project skeleton ready."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faz 0 — proje iskeleti hazır."
+          }
+        }
+      }
+    },
+    "menu.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Karakter"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Karakter"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
