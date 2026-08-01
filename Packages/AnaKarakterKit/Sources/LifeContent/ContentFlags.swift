@@ -34,6 +34,11 @@ public extension LifeFlag {
     // Orta sahne / final
     static let hobiUstasi = LifeFlag("hobiUstasi")
     static let emekli = LifeFlag("emekli")
+    static let torunVar = LifeFlag("torunVar")
+
+    // Faz 2 zincirleri
+    static let evcilDost = LifeFlag("evcilDost")
+    static let teknoMeraki = LifeFlag("teknoMeraki")
 }
 
 /// Katalogda kullanılabilir bayrakların tam listesi (lint denetimi için).
@@ -44,6 +49,7 @@ public enum ContentFlags {
         .kanka, .lider, .fenLisesi,
         .universiteli, .stajYapti, .mezun, .iliskide, .askerYapti, .gonullu, .ehliyetVar,
         .calisiyor, .evli, .cocukVar, .evSahibi, .arabaVar, .girisimciRuh, .iyiKomsu,
-        .hobiUstasi, .emekli,
+        .hobiUstasi, .emekli, .torunVar,
+        .evcilDost, .teknoMeraki,
     ]
 }

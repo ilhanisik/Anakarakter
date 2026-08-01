@@ -7,10 +7,21 @@ import Observation
 final class Router {
     var path: [Route] = []
 
-    // Faz 2: gerçek rotalarla birlikte push/pop API'si buraya eklenir.
-    // (Route şu an boş enum; asla çağrılamayacak gövdeler uyarı üretir.)
+    func push(_ route: Route) {
+        path.append(route)
+    }
+
+    func pop() {
+        guard !path.isEmpty else { return }
+        path.removeLast()
+    }
 
     func popToRoot() {
         path.removeAll()
+    }
+
+    /// Yığını tek rotayla değiştirir ("bir hayat daha" akışı).
+    func replace(with route: Route) {
+        path = [route]
     }
 }

@@ -14,10 +14,11 @@ Mağaza adı: **Ana Karakter: Yaşam Simülasyonu** · Bundle: `com.isiksoft.ana
 | `docs/01-GDD.md` | Oyun tasarımı: çekirdek döngü, statlar, AKE, sezonlar, olay sistemi, Günün Hayatı, jenerik kartı |
 | `docs/02-ARCHITECTURE.md` | AnaKarakterKit (LifeDomain), içerik hattı, determinizm, persistence, reklam mimarisi, test stratejisi |
 | `docs/03-ROADMAP.md` | MVP fazları (0–5), kabul kriterleri, riskler |
+| `docs/04-ICERIK-OKUMA-TURU.md` | Hassas omurga olayları — SAHİP okuma turu |
 
 ## Durum
 
-Faz 1 tamamlandı (2026-08-01): LifeDomain çekirdeği (motor + determinizm), `LifeContent` kataloğu (70 olay, 6 sezon omurgası), 72 test — 10.000 hayat simülasyon kapısı, ContentLint ve denge testleri dahil hepsi yeşil. Sıradaki adım: **SAHİP onayı → Faz 2** (oynanabilir dikey dilim).
+Faz 2 tamamlandı (2026-08-01): oynanabilir dikey dilim — yıl akışı, karar kartları, stat panosu + AKE, ölüm → "Bir İşıksoft Yapımı" özeti, "bir hayat daha" döngüsü; katalog 145 olay; 72 test yeşil; simülatörde uçtan uca ömür + Dynamic Type AX5 + Dark/Light doğrulandı. Hassas omurga okuma turu `docs/04` SAHİP'te. Sıradaki adım: **SAHİP onayı → Faz 3** (his katmanı + kimlik).
 
 ## Başlangıç
 

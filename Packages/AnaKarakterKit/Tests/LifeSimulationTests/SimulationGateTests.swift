@@ -19,6 +19,7 @@ struct SimulationGateTests {
         var triggeredEventIDs = Set<EventID>()
         var deathAges: [Int] = []
         deathAges.reserveCapacity(Self.lifeCount)
+        var totalDistinctEvents = 0 // çeşitlilik metriği (docs/03 risk tablosu)
 
         for seed in 0..<Self.lifeCount {
             var policy = RandomDecisionPolicy(seed: UInt64(seed) &+ 0xDECAF)
@@ -53,6 +54,7 @@ struct SimulationGateTests {
                     #expect(entry.age == age, "\(event.id.rawValue) kilometre taşı yanlış yaşta")
                 }
             }
+            totalDistinctEvents += occurrences.count
             for (eventID, ages) in occurrences {
                 let event = try #require(catalog.event(id: eventID))
                 switch event.cooldown {
@@ -73,6 +75,11 @@ struct SimulationGateTests {
         // Reachability: her olay 10.000 hayatın en az birinde tetiklendi.
         let unreached = allEventIDs.subtracting(triggeredEventIDs)
         #expect(unreached.isEmpty, "ulaşılmayan olaylar: \(unreached.map(\.rawValue).sorted())")
+
+        // Çeşitlilik: bir ömürde ortalama tekil olay sayısı — tekrar
+        // oynanabilirlik erken tükenmesin (docs/03 risk tablosu).
+        let averageDistinct = Double(totalDistinctEvents) / Double(Self.lifeCount)
+        #expect(averageDistinct >= 30.0, "ömür başına ortalama tekil olay \(averageDistinct)")
     }
 
     @Test("Determinizm: aynı seed + aynı kararlar = bit-bit aynı hayat")

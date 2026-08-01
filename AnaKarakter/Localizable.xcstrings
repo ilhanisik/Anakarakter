@@ -1,38 +1,221 @@
 {
   "sourceLanguage" : "tr",
   "strings" : {
-    "menu.phase0.status" : {
+    "a11y.choice.bold" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Phase 0 — project skeleton ready."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faz 0 — proje iskeleti hazır."
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bold choice: high risk, the scene is yours." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Cesur seçim: risk yüksek, sahne senin." } }
+      }
+    },
+    "a11y.choice.neutral" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Balanced choice." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Dengeli seçim." } }
+      }
+    },
+    "a11y.choice.safe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Safe choice." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Güvenli seçim." } }
+      }
+    },
+    "life.age %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Age %lld" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "%lld yaşında" } }
+      }
+    },
+    "life.creditsRoll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The credits roll…" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Jenerik akıyor…" } }
+      }
+    },
+    "life.liveYear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Live the Year" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yılı Yaşa" } }
+      }
+    },
+    "menu.newLife" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Life" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yeni Hayat" } }
+      }
+    },
+    "menu.tagline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pick a life, play bold — when the credits roll, your name runs big." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Bir hayat seç, cesur oyna, jenerik aktığında adın büyük yazsın." } }
       }
     },
     "menu.title" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ana Karakter"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ana Karakter"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ana Karakter" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Ana Karakter" } }
+      }
+    },
+    "season.cocukluk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Childhood" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Çocukluk" } }
+      }
+    },
+    "season.finalSezonu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Final Season" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Final Sezonu" } }
+      }
+    },
+    "season.kurulus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Building Years" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kuruluş" } }
+      }
+    },
+    "season.okul" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "School" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Okul" } }
+      }
+    },
+    "season.ortaSahne" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Middle Act" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Orta Sahne" } }
+      }
+    },
+    "season.yolAyrimi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Crossroads" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yol Ayrımı" } }
+      }
+    },
+    "stat.ake" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "MCE" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "AKE" } }
+      }
+    },
+    "stat.ake.full" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Main Character Energy" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Ana Karakter Enerjisi" } }
+      }
+    },
+    "stat.happiness" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Happiness" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Mutluluk" } }
+      }
+    },
+    "stat.health" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Health" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Sağlık" } }
+      }
+    },
+    "stat.intelligence" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Smarts" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Zekâ" } }
+      }
+    },
+    "stat.money" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Money" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Para" } }
+      }
+    },
+    "stat.social" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Social" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Sosyal" } }
+      }
+    },
+    "summary.age %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Age %lld" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yaş %lld" } }
+      }
+    },
+    "summary.backToMenu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Back to Menu" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Menüye Dön" } }
+      }
+    },
+    "summary.finalStats" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Closing Numbers" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kapanış Değerleri" } }
+      }
+    },
+    "summary.newLife" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "One More Life" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Bir Hayat Daha" } }
+      }
+    },
+    "summary.production" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "An İşıksoft Production" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Bir İşıksoft Yapımı" } }
+      }
+    },
+    "summary.roles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cast of Roles" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Rol Listesi" } }
+      }
+    },
+    "summary.scenes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unforgettable Scenes" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Unutulmaz Sahneler" } }
+      }
+    },
+    "summary.score" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Life Score" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hayat Puanı" } }
+      }
+    },
+    "timeline.year %lld %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Age %1$lld · %2$@" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yaş %1$lld · %2$@" } }
       }
     }
   },

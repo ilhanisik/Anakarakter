@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA0000000000000000000010 /* LifeDomain in Frameworks */ = {isa = PBXBuildFile; productRef = AA000000000000000000000F /* LifeDomain */; };
+		AA0000000000000000000015 /* LifeContent in Frameworks */ = {isa = PBXBuildFile; productRef = AA0000000000000000000014 /* LifeContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0000000000000000000010 /* LifeDomain in Frameworks */,
+				AA0000000000000000000015 /* LifeContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,7 @@
 			name = AnaKarakter;
 			packageProductDependencies = (
 				AA000000000000000000000F /* LifeDomain */,
+				AA0000000000000000000014 /* LifeContent */,
 			);
 			productName = AnaKarakter;
 			productReference = AA0000000000000000000011 /* AnaKarakter.app */;
@@ -364,6 +367,10 @@
 		AA000000000000000000000F /* LifeDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LifeDomain;
+		};
+		AA0000000000000000000014 /* LifeContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LifeContent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

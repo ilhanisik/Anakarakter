@@ -8,7 +8,7 @@ enum FinalSeasonEvents {
             "final.torun", seasons: [.finalSezonu], w: 12,
             cond: [.hasFlag(.cocukVar)],
             tr: "Torun geldi! Evin şeker stoğu ikiye katlandı, kurallar yarıya indi.",
-            fx: [hp(6), rol("torunSevdalisi", "Torun sevdalısı")]
+            fx: [hp(6), flag(.torunVar), rol("torunSevdalisi", "Torun sevdalısı")]
         ),
 
         news(

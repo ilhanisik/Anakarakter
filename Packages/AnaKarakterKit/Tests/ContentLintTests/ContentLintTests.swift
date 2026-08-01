@@ -260,8 +260,8 @@ struct ContentBalanceLint {
         #expect(boldCount >= 15, "katalogda yalnız \(boldCount) cesur seçim")
     }
 
-    @Test("Katalog hacmi Faz 1 hedefinde (~60 olay)")
+    @Test("Katalog hacmi Faz 2 hedefinde (~150 olay)")
     func catalogSize() {
-        #expect(events.count >= 55, "katalogda yalnız \(events.count) olay")
+        #expect(events.count >= 140, "katalogda yalnız \(events.count) olay")
     }
 }
