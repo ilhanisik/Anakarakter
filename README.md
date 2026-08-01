@@ -17,7 +17,7 @@ Mağaza adı: **Ana Karakter: Yaşam Simülasyonu** · Bundle: `com.isiksoft.ana
 
 ## Durum
 
-Faz 0 tamamlandı (2026-08-01): proje iskeleti, filesystem-synchronized `pbxproj`, `AnaKarakterKit` + ilk test, git. Sıradaki adım: **SAHİP onayı → Faz 1** (LifeDomain çekirdeği).
+Faz 1 tamamlandı (2026-08-01): LifeDomain çekirdeği (motor + determinizm), `LifeContent` kataloğu (70 olay, 6 sezon omurgası), 72 test — 10.000 hayat simülasyon kapısı, ContentLint ve denge testleri dahil hepsi yeşil. Sıradaki adım: **SAHİP onayı → Faz 2** (oynanabilir dikey dilim).
 
 ## Başlangıç
 

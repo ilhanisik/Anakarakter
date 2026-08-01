@@ -9,12 +9,22 @@ let package = Package(
     ],
     products: [
         .library(name: "LifeDomain", targets: ["LifeDomain"]),
+        .library(name: "LifeContent", targets: ["LifeContent"]),
     ],
     targets: [
         .target(name: "LifeDomain"),
+        .target(name: "LifeContent", dependencies: ["LifeDomain"]),
         .testTarget(
             name: "LifeDomainTests",
             dependencies: ["LifeDomain"]
+        ),
+        .testTarget(
+            name: "ContentLintTests",
+            dependencies: ["LifeDomain", "LifeContent"]
+        ),
+        .testTarget(
+            name: "LifeSimulationTests",
+            dependencies: ["LifeDomain", "LifeContent"]
         ),
     ]
 )
