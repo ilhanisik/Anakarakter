@@ -99,7 +99,7 @@ struct LifeSummaryView: View {
 
     private var header: some View {
         VStack(spacing: DesignTokens.Spacing.small) {
-            Text(String(localized: "summary.production").uppercased())
+            Text(String(localized: "summary.production").localizedUppercase)
                 .font(DesignTokens.Typography.creditsCaption)
                 .kerning(2)
                 .foregroundStyle(DesignTokens.TextColor.secondary)

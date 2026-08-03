@@ -107,7 +107,7 @@ struct SeasonPosterView: View {
     }
 
     private var title: some View {
-        Text(season.localizedName.uppercased())
+        Text(season.localizedName.localizedUppercase)
             .font(DesignTokens.Typography.posterTitle)
             .kerning(2)
             .foregroundStyle(.white)
@@ -119,7 +119,7 @@ struct SeasonPosterView: View {
     private var footer: some View {
         VStack(spacing: DesignTokens.Spacing.xSmall) {
             rule
-            Text(personName.uppercased())
+            Text(personName.localizedUppercase)
                 .font(DesignTokens.Typography.creditsCaption)
                 .kerning(2)
                 .foregroundStyle(.white.opacity(0.9))

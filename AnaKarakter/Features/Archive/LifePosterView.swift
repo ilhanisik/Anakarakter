@@ -61,7 +61,7 @@ struct LifePosterView: View {
                     .foregroundStyle(.white.opacity(0.92))
                     .accessibilityHidden(true)
 
-                Text(life.name.uppercased())
+                Text(life.name.localizedUppercase)
                     .font(DesignTokens.Typography.chapter)
                     .kerning(1.5)
                     .foregroundStyle(.white)

@@ -53,7 +53,7 @@ struct EventCardView: View {
                 .font(.headline)
                 .foregroundStyle(season.accent)
                 .accessibilityHidden(true)
-            Text(season.localizedName.uppercased())
+            Text(season.localizedName.localizedUppercase)
                 .font(.caption.weight(.semibold))
                 .kerning(1.5)
                 .foregroundStyle(season.accent)

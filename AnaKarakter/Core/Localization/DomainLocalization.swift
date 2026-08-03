@@ -1,4 +1,9 @@
 import SwiftUI
+
+// NOT (kalıcı): Metni büyütürken `uppercased()` KULLANILMAZ, `localizedUppercase`
+// kullanılır. `uppercased()` Unicode kök kurallarını uygular ve Türkçede yanlış
+// sonuç verir: "Bir" → "BIR" (doğrusu "BİR"), "Final" → "FINAL" (doğrusu
+// "FİNAL"), "Nihal" → "NIHAL". Marka adı da bundan etkilenir: İşıksoft.
 import LifeDomain
 
 extension Season {

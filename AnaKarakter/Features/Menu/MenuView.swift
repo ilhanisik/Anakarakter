@@ -31,7 +31,7 @@ struct MenuView: View {
     /// altında slogan. Jenerik kartıyla aynı tipografiyi konuşur.
     private var masthead: some View {
         VStack(spacing: DesignTokens.Spacing.small) {
-            Text(String(localized: "summary.production").uppercased())
+            Text(String(localized: "summary.production").localizedUppercase)
                 .font(DesignTokens.Typography.creditsCaption)
                 .kerning(3)
                 .foregroundStyle(DesignTokens.TextColor.secondary)

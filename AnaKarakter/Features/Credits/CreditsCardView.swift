@@ -27,12 +27,12 @@ struct CreditsCardView: View {
         VStack(spacing: 0) {
             Spacer(minLength: 24)
 
-            Text(String(localized: "summary.production").uppercased())
+            Text(String(localized: "summary.production").localizedUppercase)
                 .font(.system(size: 15, design: .serif))
                 .kerning(3)
                 .foregroundStyle(.white.opacity(0.65))
 
-            Text(card.name.uppercased())
+            Text(card.name.localizedUppercase)
                 .font(.system(size: isStory ? 58 : 48, weight: .bold, design: .serif))
                 .minimumScaleFactor(0.6)
                 .lineLimit(1)
@@ -62,7 +62,7 @@ struct CreditsCardView: View {
                 VStack(spacing: 14) {
                     ForEach(card.memorableScenes, id: \.self) { scene in
                         VStack(spacing: 3) {
-                            Text(String(localized: "summary.age \(scene.age)").uppercased())
+                            Text(String(localized: "summary.age \(scene.age)").localizedUppercase)
                                 .font(.system(size: 12, design: .serif))
                                 .kerning(2)
                                 .foregroundStyle(.white.opacity(0.5))
