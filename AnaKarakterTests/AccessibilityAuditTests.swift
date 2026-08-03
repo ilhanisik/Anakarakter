@@ -18,12 +18,12 @@ final class AccessibilityAuditTests: XCTestCase {
 
     func testMenuIsAccessible() throws {
         XCTAssertTrue(app.staticTexts["Ana Karakter"].waitForExistence(timeout: 10))
-        try app.performAccessibilityAudit()
+        try audit()
     }
 
     func testLifeFlowIsAccessible() throws {
         try startNewLife()
-        try app.performAccessibilityAudit()
+        try audit()
     }
 
     /// Yıl akışında birkaç yıl ilerleyip kart + seçim düzenini denetler.
@@ -32,22 +32,41 @@ final class AccessibilityAuditTests: XCTestCase {
         for _ in 0..<6 {
             tapPrimaryAction()
         }
-        try app.performAccessibilityAudit()
+        try audit()
     }
 
     func testArchiveIsAccessible() throws {
         app.buttons["Jenerik Arşivi"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try audit()
     }
 
     func testSettingsIsAccessible() throws {
         app.buttons["Ayarlar"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try audit()
     }
 
     // MARK: Yardımcılar
+
+    /// Denetimi koşar.
+    ///
+    /// Teşhis modu: şemaya `AUDIT_LOG=1` ortam değişkeni eklenirse her ihlal
+    /// öğesiyle birlikte yazdırılır ve test düşmez. Bu değişkeni xcodebuild
+    /// komut satırından geçirmek İŞE YARAMIYOR (runner sürecine ulaşmıyor) —
+    /// Xcode'da Product ▸ Scheme ▸ Edit Scheme ▸ Test ▸ Arguments'tan
+    /// eklenmelidir. Kalan kontrast ihlallerinin kaynağı böyle bulunacak.
+    private func audit() throws {
+        let logging = ProcessInfo.processInfo.environment["AUDIT_LOG"] == "1"
+        try app.performAccessibilityAudit { issue in
+            if logging {
+                let element = issue.element?.debugDescription
+                    .split(separator: "\n").first.map(String.init) ?? "?"
+                print("AUDITISSUE|\(issue.auditType)|\(issue.compactDescription)|\(element)")
+            }
+            return logging
+        }
+    }
 
     private func startNewLife() throws {
         let newLife = app.buttons["Yeni Hayat"].firstMatch
