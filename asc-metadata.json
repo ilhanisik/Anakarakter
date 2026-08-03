@@ -1,4 +1,16 @@
 {
+  "iap": {
+    "com.isiksoft.anakarakter.removeads": {
+      "tr": {
+        "name": "Reklamları Kaldır",
+        "description": "Zorunlu reklamlar kalkar, ödüller reklamsız."
+      },
+      "en-US": {
+        "name": "Remove Ads",
+        "description": "Removes forced ads; rewards unlock free."
+      }
+    }
+  },
   "locales": {
     "tr": {
       "name": "Ana Karakter: Yaşam Sim",
