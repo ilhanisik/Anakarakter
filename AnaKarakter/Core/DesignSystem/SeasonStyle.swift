@@ -15,6 +15,21 @@ extension Season {
         }
     }
 
+    /// Sezonun **dolgu** rengi: afiş ve zemin için canlı marka tonu.
+    /// `accent` ise METİN/İKON içindir ve aydınlık zeminde okunabilsin diye
+    /// koyudur. Rengi karartmak yerine üstündeki metni koyulaştırmak hem
+    /// kontrastı hem kimliği korur (bkz. GoldButtonStyle).
+    var fill: Color {
+        switch self {
+        case .cocukluk: Color("SeasonCocuklukFill")
+        case .okul: Color("SeasonOkulFill")
+        case .yolAyrimi: Color("SeasonYolAyrimiFill")
+        case .kurulus: Color("SeasonKurulusFill")
+        case .ortaSahne: Color("SeasonOrtaSahneFill")
+        case .finalSezonu: Color("SeasonFinalSezonuFill")
+        }
+    }
+
     /// Poster motifi (SF Symbol).
     var posterSymbol: String {
         switch self {

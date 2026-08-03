@@ -153,7 +153,7 @@ struct SeasonPosterView: View {
     private func surface(_ variant: Variant) -> some View {
         ZStack {
             LinearGradient(
-                colors: [season.accent, season.accent.opacity(0.5)],
+                colors: [season.fill, season.fill.opacity(0.5)],
                 startPoint: variant.lightAnchor,
                 endPoint: UnitPoint(x: 1 - variant.lightAnchor.x, y: 1)
             )

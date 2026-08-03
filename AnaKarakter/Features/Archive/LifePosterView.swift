@@ -46,7 +46,7 @@ struct LifePosterView: View {
     private var artwork: some View {
         ZStack {
             LinearGradient(
-                colors: [season.accent, season.accent.opacity(0.55)],
+                colors: [season.fill, season.fill.opacity(0.55)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )

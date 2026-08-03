@@ -22,7 +22,7 @@ struct StageBackground: View {
     @State private var lightPhase: CGFloat = 0
 
     private var lightColor: Color {
-        season?.accent ?? .accentColor
+        season?.fill ?? DesignTokens.Accent.goldFill
     }
 
     /// Işığın gücü: Dark Mode'da sahne ışığı belirgin, Light Mode'da yalnız
