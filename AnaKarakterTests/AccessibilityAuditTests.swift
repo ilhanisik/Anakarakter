@@ -18,12 +18,12 @@ final class AccessibilityAuditTests: XCTestCase {
 
     func testMenuIsAccessible() throws {
         XCTAssertTrue(app.staticTexts["Ana Karakter"].waitForExistence(timeout: 10))
-        try audit()
+        try audit(#function)
     }
 
     func testLifeFlowIsAccessible() throws {
         try startNewLife()
-        try audit()
+        try audit(#function)
     }
 
     /// Yıl akışında birkaç yıl ilerleyip kart + seçim düzenini denetler.
@@ -32,39 +32,40 @@ final class AccessibilityAuditTests: XCTestCase {
         for _ in 0..<6 {
             tapPrimaryAction()
         }
-        try audit()
+        try audit(#function)
     }
 
     func testArchiveIsAccessible() throws {
         app.buttons["Jenerik Arşivi"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 5))
-        try audit()
+        try audit(#function)
     }
 
     func testSettingsIsAccessible() throws {
         app.buttons["Ayarlar"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 5))
-        try audit()
+        try audit(#function)
     }
 
     // MARK: Yardımcılar
 
-    /// Denetimi koşar.
+    /// Denetimi koşar ve ihlalleri **hata mesajına** toplar.
     ///
-    /// Teşhis modu: şemaya `AUDIT_LOG=1` ortam değişkeni eklenirse her ihlal
-    /// öğesiyle birlikte yazdırılır ve test düşmez. Bu değişkeni xcodebuild
-    /// komut satırından geçirmek İŞE YARAMIYOR (runner sürecine ulaşmıyor) —
-    /// Xcode'da Product ▸ Scheme ▸ Edit Scheme ▸ Test ▸ Arguments'tan
-    /// eklenmelidir. Kalan kontrast ihlallerinin kaynağı böyle bulunacak.
-    private func audit() throws {
-        let logging = ProcessInfo.processInfo.environment["AUDIT_LOG"] == "1"
+    /// `performAccessibilityAudit`'in kendi hatası yalnız "Contrast failed"
+    /// diyor; hangi görünümün sorunlu olduğu komut satırından okunamıyor.
+    /// Bu yüzden ihlaller elde toplanıp tek bir mesajda raporlanıyor —
+    /// xcresult'tan okunabilir hâle geliyor.
+    private func audit(_ screen: String) throws {
+        // Kapanış Sendable olmak zorunda; birikim referans tipte tutulur.
+        let box = IssueBox()
         try app.performAccessibilityAudit { issue in
-            if logging {
-                let element = issue.element?.debugDescription
-                    .split(separator: "\n").first.map(String.init) ?? "?"
-                print("AUDITISSUE|\(issue.auditType)|\(issue.compactDescription)|\(element)")
-            }
-            return logging
+            let label = issue.element?.label ?? "?"
+            box.append("[\(issue.auditType)] '\(label)' — \(issue.compactDescription)")
+            return true // burada yutulur; rapor aşağıda tek seferde verilir
+        }
+        let found = box.all
+        if !found.isEmpty {
+            XCTFail("DENETIM \(screen) (\(found.count)): " + found.joined(separator: " || "))
         }
     }
 
@@ -85,5 +86,21 @@ final class AccessibilityAuditTests: XCTestCase {
         // Karar bekleniyorsa ilk seçeneği seç.
         let choices = app.buttons.allElementsBoundByIndex.filter { $0.isHittable }
         choices.last?.tap()
+    }
+}
+
+/// Denetim ihlallerini biriktiren küçük kutu (kapanış Sendable olsun diye).
+final class IssueBox: @unchecked Sendable {
+    private let lock = NSLock()
+    private var items: [String] = []
+
+    func append(_ text: String) {
+        lock.lock(); defer { lock.unlock() }
+        items.append(text)
+    }
+
+    var all: [String] {
+        lock.lock(); defer { lock.unlock() }
+        return items
     }
 }
