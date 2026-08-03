@@ -12,16 +12,22 @@ public enum ContentCatalog {
         + ChainEvents.all
         + ChildhoodEvents.all
         + ChildhoodEventsB.all
+        + ChildhoodEventsC.all
         + SchoolEvents.all
         + SchoolEventsB.all
+        + SchoolEventsC.all
         + CrossroadsEvents.all
         + CrossroadsEventsB.all
+        + CrossroadsEventsC.all
         + FoundationEvents.all
         + FoundationEventsB.all
+        + FoundationEventsC.all
         + MidlifeEvents.all
         + MidlifeEventsB.all
         + FinalSeasonEvents.all
         + FinalSeasonEventsB.all
+        + LateSeasonEventsC.all
+        + SliceOfLifeEvents.all
 
     /// Oyunun aktif kataloğu.
     public static let catalog = EventCatalog(events: events, pools: PersonPoolsContent.pools)

@@ -85,6 +85,89 @@ struct ContentSchemaLint {
         }
     }
 
+    @Test("Yaş bandı geçerli ve olayın sezonlarıyla kesişiyor")
+    func ageBandsValid() {
+        for event in events {
+            let bounds = event.conditions.declaredAgeBounds
+            if let low = bounds.min {
+                #expect((0...LifeDomain.maximumAge).contains(low),
+                        "\(event.id.rawValue): minAge bant dışı (\(low))")
+            }
+            if let high = bounds.max {
+                #expect((0...LifeDomain.maximumAge).contains(high),
+                        "\(event.id.rawValue): maxAge bant dışı (\(high))")
+            }
+            if let low = bounds.min, let high = bounds.max {
+                #expect(low <= high, "\(event.id.rawValue): çelişkili yaş bandı \(low)–\(high)")
+            }
+            // Havuz olayının bandı, sezonlarının yaş aralığıyla kesişmeli —
+            // aksi hâlde olay hiçbir zaman çekilemez (ölü içerik).
+            guard case let .pool(seasons) = event.trigger, bounds.min != nil || bounds.max != nil
+            else { continue }
+            let reachable = seasons.contains { season in
+                season.ageRange.contains { event.conditions.ageAllows($0) }
+            }
+            #expect(reachable, "\(event.id.rawValue): yaş bandı sezonlarıyla kesişmiyor — ölü olay")
+        }
+    }
+
+    @Test("Geniş sezonlarda gelişim basamağı beyan edilir")
+    func wideSeasonsDeclareAgeBands() {
+        // Çocukluk (0–5) ve Okul (6–17) içinde gelişim basamağı yıl yıl değişir.
+        // Bu iki sezonun havuz olaylarının en az yarısı yaş bandı beyan etmeli;
+        // aksi hâlde "okul dönüşü" olayı 0 yaşında çekilebilir.
+        for season in [Season.cocukluk, Season.okul] {
+            let pool = events.filter {
+                if case let .pool(seasons) = $0.trigger { return seasons.contains(season) }
+                return false
+            }
+            let banded = pool.count {
+                let bounds = $0.conditions.declaredAgeBounds
+                return bounds.min != nil || bounds.max != nil
+            }
+            #expect(banded * 2 >= pool.count,
+                    "\(season.rawValue): \(pool.count) olayın yalnız \(banded) tanesi yaş bandı beyan ediyor")
+        }
+    }
+
+    /// Faz 3 his turunda cihazda görülen somut kusurlar (docs/03). Sezon tek
+    /// kapıyken bu olaylar imkânsız yaşlarda çekiliyordu; bant beyanları
+    /// geri alınırsa bu test düşer.
+    @Test("His turu regresyonu: gelişim basamağı olayları erken çekilemez")
+    func developmentalOrderRegression() {
+        let earliest: [String: Int] = [
+            "okul.alanSecimi": 14,      // lisede alan seçimi — 8 yaşında çıkıyordu
+            "cocukluk.ilkBisiklet": 4,  // destek tekerleri — 0 yaşında çıkıyordu
+            "cocukluk.evcilHayvan": 4,  // sokakta kedi — 0 yaşında "okul dönüşü"ydü
+            "cocukluk.misket": 4,
+            "okul.ilkTelefon": 11,
+            "yol.kariyerFuari": 21,
+            "final.torunMasal": 69,
+        ]
+        for (id, expected) in earliest {
+            guard let event = events.first(where: { $0.id == EventID(id) }) else {
+                Issue.record("\(id): katalogda yok")
+                continue
+            }
+            let low = event.conditions.declaredAgeBounds.min
+            #expect(low == expected, "\(id): en erken yaş \(low.map(String.init) ?? "beyansız"), beklenen \(expected)")
+        }
+    }
+
+    @Test("Çocukluk havuzunda okul göndermesi yok")
+    func childhoodHasNoSchoolReferences() {
+        // Çocukluk 0–5; bu sezonun havuzunda okul hayatı geçemez.
+        for event in events {
+            guard case let .pool(seasons) = event.trigger,
+                  seasons == [Season.cocukluk] else { continue }
+            let lowered = event.text.tr.lowercased()
+            for term in ["okul dönüşü", "sınıf", "öğretmen", "teneffüs", "karne"] {
+                #expect(!lowered.contains(term),
+                        "\(event.id.rawValue): çocukluk metninde okul göndermesi '\(term)'")
+            }
+        }
+    }
+
     @Test("Koşul ve etkilerdeki bayraklar sözlükte tanımlı")
     func flagsDeclared() {
         func flags(in conditions: [Condition]) -> [LifeFlag] {
@@ -216,6 +299,26 @@ struct ContentBalanceLint {
         }
     }
 
+    /// Yaş bandı kapıları geldikten sonraki asıl risk: tek tek yılların
+    /// boşalması. Sezon toplamı yeterli görünürken 0 yaşında havuz 2 olaya
+    /// düşebilir; bu kapı onu yakalar (docs/03 Faz 3 his turu).
+    @Test("Her yaşta yeterli havuz olayı var (bayrak/stat koşulsuz taban)")
+    func perAgeCoverage() {
+        let ceiling = 90 // 90 üstü seyrek; ölüm modeli bu yaşlarda zaten kapatıyor
+        for age in 0...ceiling {
+            let season = Season.forAge(age)
+            let available = events.count { event in
+                guard case let .pool(seasons) = event.trigger, seasons.contains(season)
+                else { return false }
+                // Yalnız yaş kapısına bak: bayrak/stat koşulları hayata göre
+                // değişir, taban kapsamayı yaş belirler.
+                return event.conditions.ageAllows(age)
+            }
+            #expect(available >= LifeDomain.eventsPerYear.upperBound,
+                    "yaş \(age) (\(season.rawValue)): yalnız \(available) havuz olayı — yıl boşalabilir")
+        }
+    }
+
     /// Materyal etki skoru: stat deltaları (AKE hariç) + para/10.000.
     /// AKE bilinçli olarak dışarıda — cesaretin ödülü AKE'nin kendisidir.
     private func materialScore(_ effects: [Effect]) -> Double {
@@ -260,8 +363,8 @@ struct ContentBalanceLint {
         #expect(boldCount >= 15, "katalogda yalnız \(boldCount) cesur seçim")
     }
 
-    @Test("Katalog hacmi Faz 2 hedefinde (~150 olay)")
+    @Test("Katalog hacmi Faz 4 hedefinde (~300 olay)")
     func catalogSize() {
-        #expect(events.count >= 140, "katalogda yalnız \(events.count) olay")
+        #expect(events.count >= 295, "katalogda yalnız \(events.count) olay")
     }
 }

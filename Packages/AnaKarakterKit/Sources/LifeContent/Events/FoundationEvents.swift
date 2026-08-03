@@ -72,7 +72,8 @@ enum FoundationEvents {
                     outcomes: [
                         outcome("kurulus.cocuk", "haziriz", 1,
                             tr: "Eve minik bir başrol katıldı. Uykusuz ama bambaşka mutlu günler.",
-                            fx: [hp(6), tl(-30_000), flag(.cocukVar), rol("ebeveyn", "Ebeveyn")]),
+                            fx: [hp(6), tl(-30_000), flag(.cocukVar), rol("ebeveyn", "Ebeveyn")],
+                            follow: follow("kurulus.cocukIlkGun", delay: 6)),
                     ]),
                 choice("kurulus.cocuk", "bekle", .neutral,
                     tr: "Biraz daha bekleyelim",

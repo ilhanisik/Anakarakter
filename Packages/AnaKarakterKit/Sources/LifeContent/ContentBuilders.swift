@@ -8,24 +8,36 @@ func t(_ key: String, _ tr: String) -> EventText {
     EventText(key: key, tr: tr)
 }
 
+/// Yaş bandını koşula çevirir. `from`/`to` sezon içinde gelişim basamağını
+/// daraltır: Çocukluk 0–5 ve Okul 6–17 gibi geniş sezonlarda olayın hangi
+/// yaşlarda anlamlı olduğunu içerik beyan eder (docs/03 Faz 3 his turu).
+private func ageConditions(from: Int?, to: Int?) -> [Condition] {
+    var result: [Condition] = []
+    if let from { result.append(.minAge(from)) }
+    if let to { result.append(.maxAge(to)) }
+    return result
+}
+
 func news(
-    _ id: String, seasons: Set<Season>, w: Int = 10,
+    _ id: String, seasons: Set<Season>, from: Int? = nil, to: Int? = nil, w: Int = 10,
     cond: [Condition] = [], cd: Cooldown = .oncePerLife,
     tr: String, fx: [Effect] = []
 ) -> LifeEvent {
     LifeEvent(
-        id: EventID(id), trigger: .pool(seasons: seasons), conditions: cond,
+        id: EventID(id), trigger: .pool(seasons: seasons),
+        conditions: ageConditions(from: from, to: to) + cond,
         weight: w, cooldown: cd, text: t("event.\(id)", tr), choices: [], onOccur: fx
     )
 }
 
 func decision(
-    _ id: String, seasons: Set<Season>, w: Int = 10,
+    _ id: String, seasons: Set<Season>, from: Int? = nil, to: Int? = nil, w: Int = 10,
     cond: [Condition] = [], cd: Cooldown = .oncePerLife,
     tr: String, choices: [Choice]
 ) -> LifeEvent {
     LifeEvent(
-        id: EventID(id), trigger: .pool(seasons: seasons), conditions: cond,
+        id: EventID(id), trigger: .pool(seasons: seasons),
+        conditions: ageConditions(from: from, to: to) + cond,
         weight: w, cooldown: cd, text: t("event.\(id)", tr), choices: choices
     )
 }

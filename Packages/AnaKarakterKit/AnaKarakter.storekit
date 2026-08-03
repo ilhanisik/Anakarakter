@@ -1,0 +1,35 @@
+{
+  "identifier" : "AA00000000000000000000AA",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "149.99",
+      "familyShareable" : false,
+      "internalID" : "AA00000000000000000000AB",
+      "localizations" : [
+        {
+          "description" : "Zorunlu reklamlar kalkar; Şans Tekrarı ve Ekstra Sahne reklamsız açılır.",
+          "displayName" : "Reklamları Kaldır",
+          "locale" : "tr"
+        },
+        {
+          "description" : "Removes forced ads; Luck Retry and Extra Scene unlock without watching.",
+          "displayName" : "Remove Ads",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.isiksoft.anakarakter.removeads",
+      "referenceName" : "Reklamları Kaldır",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

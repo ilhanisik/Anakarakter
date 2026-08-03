@@ -32,6 +32,8 @@ struct StatPanelView: View {
                 Text(stats.money.liraFormatted)
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
+                    .contentTransition(.numericText())
+                    .animation(DesignTokens.Motion.value, value: stats.money)
             }
             .accessibilityElement(children: .combine)
         }
@@ -54,16 +56,34 @@ private struct StatGaugeView: View {
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                 Spacer(minLength: 0)
+                // Sayı yerinde değişmez, sayaç gibi döner — değişim görülür.
                 Text(value.formatted())
                     .font(.caption.weight(.semibold))
                     .monospacedDigit()
+                    .contentTransition(.numericText(value: Double(value)))
             }
-            ProgressView(value: Double(value), total: 100)
-                .tint(stat.tint)
+            meter
         }
+        .animation(DesignTokens.Motion.value, value: value)
+        .pulses(on: value, tint: stat.tint)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(stat.accessibilityName)
         .accessibilityValue("\(value)/100")
+    }
+
+    /// Kendi çizdiğimiz çubuk: `ProgressView` genişliği animasyonlamıyor,
+    /// oysa statın dolup boşalması oyunun en sık görülen geri bildirimi.
+    private var meter: some View {
+        GeometryReader { proxy in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(stat.tint.opacity(0.16))
+                Capsule()
+                    .fill(stat.tint)
+                    .frame(width: proxy.size.width * CGFloat(value) / 100)
+            }
+        }
+        .frame(height: 5)
     }
 }
 

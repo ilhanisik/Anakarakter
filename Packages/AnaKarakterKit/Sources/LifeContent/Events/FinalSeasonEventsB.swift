@@ -11,7 +11,7 @@ enum FinalSeasonEventsB {
         ),
 
         news(
-            "final.torunMasal", seasons: [.finalSezonu], w: 10,
+            "final.torunMasal", seasons: [.finalSezonu], from: 69, w: 10,
             cond: [.hasFlag(.torunVar)], cd: .years(2),
             tr: "Torunlara masal saati: senin uydurduğun kahraman artık aile klasiği oldu.",
             fx: [hp(3)]
@@ -30,7 +30,7 @@ enum FinalSeasonEventsB {
         ),
 
         decision(
-            "final.hatiraDefteri", seasons: [.finalSezonu], w: 10,
+            "final.hatiraDefteri", seasons: [.finalSezonu], from: 70, w: 10,
             tr: "Kırtasiyeden kalın bir defter aldın; kapağına 'Hayatım' yazmak üzeresin.",
             choices: [
                 choice("final.hatiraDefteri", "yaz", .neutral,

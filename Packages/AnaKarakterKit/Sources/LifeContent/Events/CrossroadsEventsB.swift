@@ -5,7 +5,7 @@ enum CrossroadsEventsB {
     static let all: [LifeEvent] = [
 
         news(
-            "yol.yurtYemekhane", seasons: [.yolAyrimi], w: 10,
+            "yol.yurtYemekhane", seasons: [.yolAyrimi], to: 21, w: 10,
             cond: [.hasFlag(.universiteli)], cd: .years(2),
             tr: "Yemekhanede efsane gün: tavuklu pilav. Kuyruk kapıya taştı, moral tavana vurdu.",
             fx: [hp(1)]
@@ -37,7 +37,7 @@ enum CrossroadsEventsB {
         ),
 
         news(
-            "yol.ilkMaasGunu", seasons: [.yolAyrimi], w: 10,
+            "yol.ilkMaasGunu", seasons: [.yolAyrimi], from: 20, w: 10,
             cond: [.hasFlag(.calisiyor)],
             tr: "İlk maaş hesaba yattı; bildirime beş kez baktın, beşinde de oradaydı.",
             fx: [hp(3), tl(5_000)]
@@ -99,7 +99,7 @@ enum CrossroadsEventsB {
         ),
 
         decision(
-            "yol.kariyerFuari", seasons: [.yolAyrimi], w: 10,
+            "yol.kariyerFuari", seasons: [.yolAyrimi], from: 21, w: 10,
             tr: "Kariyer fuarı: standlar, broşürler ve 'kendinizden bahseder misiniz?' provaları.",
             choices: [
                 choice("yol.kariyerFuari", "cvTuru", .safe,
@@ -198,7 +198,7 @@ enum CrossroadsEventsB {
         ),
 
         decision(
-            "yol.donemProjesi", seasons: [.yolAyrimi], w: 10,
+            "yol.donemProjesi", seasons: [.yolAyrimi], from: 19, w: 10,
             cond: [.hasFlag(.universiteli)],
             tr: "Dönem projesi konusu seçilecek; hocanın 'iddialı olan var mı?' bakışı sınıfı taradı.",
             choices: [

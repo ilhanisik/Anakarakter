@@ -194,8 +194,10 @@ enum FoundationEventsB {
             fx: [hp(4)]
         ),
 
-        news(
-            "kurulus.cocukIlkGun", seasons: [.kurulus], w: 10,
+        // Zincire bağlı: çocuk doğduktan 6 yıl sonra gelir. Havuzdan çekilseydi
+        // bebek doğduğu yıl okula başlayabilirdi (docs/03 Faz 3 his turu).
+        chained(
+            "kurulus.cocukIlkGun",
             cond: [.hasFlag(.cocukVar)],
             tr: "Çocuğun okula başladı. Kapıda sen ağladın, o el sallayıp sınıfa koştu.",
             fx: [hp(3)]

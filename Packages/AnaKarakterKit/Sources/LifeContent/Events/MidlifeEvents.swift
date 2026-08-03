@@ -5,7 +5,7 @@ enum MidlifeEvents {
     static let all: [LifeEvent] = [
 
         decision(
-            "orta.saglikUyarisi", seasons: [.ortaSahne], w: 12, cd: .years(5),
+            "orta.saglikUyarisi", seasons: [.ortaSahne], from: 45, w: 12, cd: .years(5),
             tr: "Rutin kontrol. Doktor tahlillere baktı: 'Kötü değil ama biraz dikkat edelim.'",
             choices: [
                 choice("orta.saglikUyarisi", "duzen", .safe,
@@ -26,7 +26,7 @@ enum MidlifeEvents {
         ),
 
         decision(
-            "orta.kariyerZirvesi", seasons: [.ortaSahne], w: 10,
+            "orta.kariyerZirvesi", seasons: [.ortaSahne], from: 45, to: 60, w: 10,
             cond: [.hasFlag(.calisiyor)],
             tr: "Sektörden büyük teklif geldi: unvan parlak, tempo acımasız.",
             choices: [
@@ -51,7 +51,7 @@ enum MidlifeEvents {
         ),
 
         news(
-            "orta.cocukOkul", seasons: [.ortaSahne], w: 10,
+            "orta.cocukOkul", seasons: [.ortaSahne], to: 52, w: 10,
             cond: [.hasFlag(.cocukVar)], cd: .years(4),
             tr: "Veli toplantısı. Öğretmen çocuğun için 'çok enerjik' dedi; tercümesi hepimizde saklı.",
             fx: [hp(2), so(1)]
@@ -83,7 +83,7 @@ enum MidlifeEvents {
         ),
 
         decision(
-            "orta.memleketFikri", seasons: [.ortaSahne], w: 10,
+            "orta.memleketFikri", seasons: [.ortaSahne], from: 50, w: 10,
             tr: "İçinde bir ses büyüyor: 'Memlekete dönsek mi?' Bahçe fotoğrafları kaydedilmeye başlandı.",
             choices: [
                 choice("orta.memleketFikri", "kal", .safe,
@@ -135,7 +135,7 @@ enum MidlifeEvents {
         ),
 
         decision(
-            "orta.ebeveynBakimi", seasons: [.ortaSahne], w: 10,
+            "orta.ebeveynBakimi", seasons: [.ortaSahne], from: 48, w: 10,
             tr: "Annenle baban artık daha sık arıyor; seslerinde tatlı bir yorgunluk var.",
             choices: [
                 choice("orta.ebeveynBakimi", "ziyaret", .neutral,
@@ -156,14 +156,14 @@ enum MidlifeEvents {
         ),
 
         news(
-            "orta.sinifBulusmasi", seasons: [.ortaSahne], w: 8,
+            "orta.sinifBulusmasi", seasons: [.ortaSahne], from: 47, w: 8,
             cond: [.hasFlag(.kanka)],
             tr: "30 yıl sonra sınıf buluşması: kimse değişmemiş, herkes değişmiş. Lakaplar aynen yerinde.",
             fx: [so(4), hp(2)]
         ),
 
         decision(
-            "orta.platoVeYeniden", seasons: [.ortaSahne], w: 10,
+            "orta.platoVeYeniden", seasons: [.ortaSahne], from: 45, w: 10,
             cond: [.hasFlag(.calisiyor)],
             tr: "İş rutine bağlandı; her gün aynı filmin tekrarı gibi.",
             choices: [

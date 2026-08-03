@@ -4,16 +4,26 @@ public struct LifeLogEntry: Codable, Sendable, Equatable, Hashable {
     public let eventID: EventID
     public let choiceID: ChoiceID?
     public let text: EventText
+    /// Statta gerçekleşen AKE değişimi (0–100 clamp'ine tabi).
     public let akeDelta: Int
     public let akeAfter: Int
+    /// Sahnenin "ana karakterlik" ağırlığı: uygulanmak İSTENEN ham AKE etkisi.
+    /// AKE tavana vurduğunda `akeDelta` 0'a düşer; jenerik sahne seçimi bu
+    /// yüzden clamp'ten etkilenmeyen bu değere bakar (yoksa jenerik yalnız
+    /// AKE'nin dolduğu ilk yılları anardı).
+    public let sceneWeight: Int
 
-    public init(age: Int, eventID: EventID, choiceID: ChoiceID?, text: EventText, akeDelta: Int, akeAfter: Int) {
+    public init(
+        age: Int, eventID: EventID, choiceID: ChoiceID?, text: EventText,
+        akeDelta: Int, akeAfter: Int, sceneWeight: Int
+    ) {
         self.age = age
         self.eventID = eventID
         self.choiceID = choiceID
         self.text = text
         self.akeDelta = akeDelta
         self.akeAfter = akeAfter
+        self.sceneWeight = sceneWeight
     }
 }
 

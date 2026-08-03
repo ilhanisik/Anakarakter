@@ -5,13 +5,13 @@ enum ChildhoodEvents {
     static let all: [LifeEvent] = [
 
         news(
-            "cocukluk.ilkKelime", seasons: [.cocukluk], w: 12,
+            "cocukluk.ilkKelime", seasons: [.cocukluk], from: 1, to: 2, w: 12,
             tr: "İlk kelimen çıktı! Kayda alınamadı ama iddialar büyük: herkes kendi adının söylendiğinden emin.",
             fx: [hp(2)]
         ),
 
         decision(
-            "cocukluk.ilkKivilcim", seasons: [.cocukluk], w: 12,
+            "cocukluk.ilkKivilcim", seasons: [.cocukluk], from: 3, w: 12,
             tr: "Bir şey içinde kıvılcım çaktı. Gözlerin hep aynı yöne kayıyor.",
             choices: [
                 choice("cocukluk.ilkKivilcim", "kitap", .neutral,
@@ -39,13 +39,13 @@ enum ChildhoodEvents {
         ),
 
         news(
-            "cocukluk.bayramHarcligi", seasons: [.cocukluk], w: 10, cd: .years(2),
+            "cocukluk.bayramHarcligi", seasons: [.cocukluk], from: 3, w: 10, cd: .years(2),
             tr: "Bayramda el öptün; harçlıklar ceplere sığmadı, annene emanet edildi (bir daha görülmedi).",
             fx: [hp(3), tl(500)]
         ),
 
         decision(
-            "cocukluk.misket", seasons: [.cocukluk], w: 10,
+            "cocukluk.misket", seasons: [.cocukluk], from: 4, w: 10,
             tr: "Mahalle misket turnuvası. Ortada şekerden bir servet dönüyor.",
             choices: [
                 choice("cocukluk.misket", "izle", .safe,
@@ -75,7 +75,7 @@ enum ChildhoodEvents {
         ),
 
         decision(
-            "cocukluk.uykuDirenisi", seasons: [.cocukluk], w: 10,
+            "cocukluk.uykuDirenisi", seasons: [.cocukluk], from: 3, w: 10,
             tr: "Yatma saati geldi ama televizyonda güzel bir şey var gibi... hep var zaten.",
             choices: [
                 choice("cocukluk.uykuDirenisi", "uyu", .safe,
@@ -99,13 +99,13 @@ enum ChildhoodEvents {
         ),
 
         news(
-            "cocukluk.mahalleMaci", seasons: [.cocukluk], w: 10,
+            "cocukluk.mahalleMaci", seasons: [.cocukluk], from: 4, w: 10,
             tr: "Mahalle maçında büyükler seni kaleye dikti. İki gol yedin, bir efsane kurtarış yaptın; konuşulan hep kurtarış.",
             fx: [so(2)]
         ),
 
         decision(
-            "cocukluk.parkKesfi", seasons: [.cocukluk], w: 10,
+            "cocukluk.parkKesfi", seasons: [.cocukluk], from: 3, w: 10,
             tr: "Parkta yeni kaydırak açıldı: yüksek, parlak ve gıcır gıcır.",
             choices: [
                 choice("cocukluk.parkKesfi", "salincak", .safe,
@@ -124,6 +124,69 @@ enum ChildhoodEvents {
                         outcome("cocukluk.parkKesfi", "kaydirak", 2,
                             tr: "İniş sert oldu, diz kanadı. Yara bandı gururla taşınıyor.",
                             fx: [hl(-4)]),
+                    ]),
+            ]
+        ),
+
+        // Bebeklik (0–2): yaş bandı kapıları geldikten sonra bu yılların
+        // havuzu ince kalmasın diye eklendi (docs/03 Faz 3 his turu).
+
+        news(
+            "cocukluk.geceNobeti", seasons: [.cocukluk], to: 1, w: 10, cd: .years(1),
+            tr: "Evde gece nöbeti düzeni kuruldu: üç saatte bir uyanılıyor, kimse şikâyet etmiyor (yüksek sesle).",
+            fx: [hp(2)]
+        ),
+
+        news(
+            "cocukluk.ilkDis", seasons: [.cocukluk], from: 0, to: 2, w: 10,
+            tr: "İlk diş göründü! Kaşık tutan herkes aynı cümleyi kurdu: 'Bak bak, çıkmış!'",
+            fx: [hl(2), hp(1)]
+        ),
+
+        decision(
+            "cocukluk.emeklemeTuru", seasons: [.cocukluk], to: 1, w: 10,
+            tr: "Emekleme menzili genişledi. Salonun öbür ucundaki kitaplık ilgi çekici görünüyor.",
+            choices: [
+                choice("cocukluk.emeklemeTuru", "hali", .safe,
+                    tr: "Halının güvenli alanında kal",
+                    outcomes: [
+                        outcome("cocukluk.emeklemeTuru", "hali", 1,
+                            tr: "Halı turu tamamlandı; herkes rahat, sen keyifli.",
+                            fx: [hp(2)]),
+                    ]),
+                choice("cocukluk.emeklemeTuru", "kitaplik", .bold,
+                    tr: "Kitaplığa doğru sefer düzenle",
+                    outcomes: [
+                        outcome("cocukluk.emeklemeTuru", "kitaplik", 1, w: 2,
+                            tr: "Rafın en alt katı fethedildi; ilk kitabın kapağı ıslak ama seninmiş.",
+                            fx: [hp(5)]),
+                        outcome("cocukluk.emeklemeTuru", "kitaplik", 2,
+                            tr: "Yolda takla atıldı; iki dakika ağlama, sonra tekrar sefer hazırlığı.",
+                            fx: [hp(-4)]),
+                    ]),
+            ]
+        ),
+
+        decision(
+            "cocukluk.mamaMasasi", seasons: [.cocukluk], from: 1, to: 2, w: 10,
+            tr: "Mama sandalyesinde tabak duruyor. Kaşık sana uzatıldı: 'Kendin mi?'",
+            choices: [
+                choice("cocukluk.mamaMasasi", "yardim", .safe,
+                    tr: "Uzatılan kaşığı kabul et",
+                    outcomes: [
+                        outcome("cocukluk.mamaMasasi", "yardim", 1,
+                            tr: "Tabak temiz, önlük temiz, herkes memnun.",
+                            fx: [hl(2)]),
+                    ]),
+                choice("cocukluk.mamaMasasi", "kendim", .bold,
+                    tr: "Kaşığı kap, kendin dene",
+                    outcomes: [
+                        outcome("cocukluk.mamaMasasi", "kendim", 1, w: 2,
+                            tr: "Yarısı ağza gitti, yarısı duvara. Bağımsızlık ilan edildi.",
+                            fx: [hp(5)]),
+                        outcome("cocukluk.mamaMasasi", "kendim", 2,
+                            tr: "Tabak ters döndü; mutfak yarım saat, moral iki dakika kayıp verdi.",
+                            fx: [hp(-4)]),
                     ]),
             ]
         ),

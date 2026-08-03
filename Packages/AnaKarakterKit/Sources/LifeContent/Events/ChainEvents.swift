@@ -4,7 +4,7 @@ import LifeDomain
 enum ChainEvents {
     static let all: [LifeEvent] = [
 
-        // ÖSYM → üniversite ilk yılı → (3 yıl sonra) mezuniyet
+        // UYS → üniversite ilk yılı → (3 yıl sonra) mezuniyet
         chained(
             "yol.universite",
             tr: "Üniversitenin ilk yılı: yeni şehir, yeni yüzler, kantin fiyatları hariç her şey heyecan verici.",

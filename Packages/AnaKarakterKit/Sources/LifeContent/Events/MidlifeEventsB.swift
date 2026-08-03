@@ -5,7 +5,7 @@ enum MidlifeEventsB {
     static let all: [LifeEvent] = [
 
         decision(
-            "orta.gencMentor", seasons: [.ortaSahne], w: 10,
+            "orta.gencMentor", seasons: [.ortaSahne], from: 45, w: 10,
             cond: [.hasFlag(.calisiyor)],
             tr: "İşe yeni giren genç, gözünü sana dikti: 'Bir şey sorabilir miyim?' günde beş kez.",
             choices: [
@@ -131,7 +131,7 @@ enum MidlifeEventsB {
         ),
 
         decision(
-            "orta.terfiSunumu", seasons: [.ortaSahne], w: 10,
+            "orta.terfiSunumu", seasons: [.ortaSahne], to: 60, w: 10,
             cond: [.hasFlag(.calisiyor)],
             tr: "Terfi listesinde adın var; yanında bir de gencecik, pırıl pırıl bir rakip.",
             choices: [
@@ -162,7 +162,7 @@ enum MidlifeEventsB {
         ),
 
         news(
-            "orta.cocukUniversite", seasons: [.ortaSahne], w: 8,
+            "orta.cocukUniversite", seasons: [.ortaSahne], from: 45, w: 8,
             cond: [.hasFlag(.cocukVar)],
             tr: "Çocuğun üniversiteyi kazandı; valiz bagajda, gözyaşı peronda, gurur her yerde.",
             fx: [hp(4), tl(-20_000)]
@@ -190,7 +190,7 @@ enum MidlifeEventsB {
         ),
 
         decision(
-            "orta.veteranTurnuvasi", seasons: [.ortaSahne], w: 8,
+            "orta.veteranTurnuvasi", seasons: [.ortaSahne], from: 45, w: 8,
             cond: [.hasFlag(.sporcuRuh)],
             tr: "Mahallede veteranlar turnuvası kuruluyor; eski forma hâlâ dolapta.",
             choices: [

@@ -15,7 +15,7 @@ struct DecisionCardView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
 
-            ForEach(choices, id: \.id) { choice in
+            ForEach(Array(choices.enumerated()), id: \.element.id) { index, choice in
                 Button {
                     onChoose(choice.id)
                 } label: {
@@ -30,13 +30,19 @@ struct DecisionCardView: View {
                     .padding(.vertical, DesignTokens.Spacing.xSmall)
                 }
                 .buttonStyle(.bordered)
+                // Seçenekler sırayla düşer: karar bir an olarak kurulur.
+                .entersScene(delay: DesignTokens.Motion.stagger(index + 1), offset: 10)
                 .accessibilityHint(accessibilityHint(for: choice.boldness))
             }
         }
         .padding(DesignTokens.Spacing.medium)
         .background(
             RoundedRectangle(cornerRadius: DesignTokens.Radius.card)
-                .fill(Color(.secondarySystemBackground))
+                .fill(.regularMaterial)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: DesignTokens.Radius.card)
+                .strokeBorder(Color.accentColor.opacity(0.25), lineWidth: 1)
         )
     }
 

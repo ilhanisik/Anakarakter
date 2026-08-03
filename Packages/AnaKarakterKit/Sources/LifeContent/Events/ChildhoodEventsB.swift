@@ -5,7 +5,7 @@ enum ChildhoodEventsB {
     static let all: [LifeEvent] = [
 
         decision(
-            "cocukluk.disDoktoru", seasons: [.cocukluk], w: 10,
+            "cocukluk.disDoktoru", seasons: [.cocukluk], from: 3, w: 10,
             tr: "İlk diş doktoru randevusu. Bekleme salonundaki balık akvaryumu bile gerginliği çözemedi.",
             choices: [
                 choice("cocukluk.disDoktoru", "kucak", .safe,
@@ -29,8 +29,8 @@ enum ChildhoodEventsB {
         ),
 
         decision(
-            "cocukluk.evcilHayvan", seasons: [.cocukluk], w: 10,
-            tr: "Okul dönüşü bir yavru kedi peşine takıldı. Gözler buluştu; iş ciddi.",
+            "cocukluk.evcilHayvan", seasons: [.cocukluk], from: 4, w: 10,
+            tr: "Sokakta bir yavru kedi peşine takıldı. Gözler buluştu; iş ciddi.",
             choices: [
                 choice("cocukluk.evcilHayvan", "besle", .safe,
                     tr: "Kapı önünde besle",
@@ -53,7 +53,7 @@ enum ChildhoodEventsB {
         ),
 
         decision(
-            "cocukluk.ilkBisiklet", seasons: [.cocukluk], w: 10,
+            "cocukluk.ilkBisiklet", seasons: [.cocukluk], from: 4, w: 10,
             tr: "Bisikletin destek tekerleri sökülme günü geldi. Sokak seyirci topladı.",
             choices: [
                 choice("cocukluk.ilkBisiklet", "birHafta", .safe,
@@ -83,7 +83,7 @@ enum ChildhoodEventsB {
         ),
 
         decision(
-            "cocukluk.anaokulGosterisi", seasons: [.cocukluk], w: 10,
+            "cocukluk.anaokulGosterisi", seasons: [.cocukluk], from: 4, w: 10,
             tr: "Anaokulu yıl sonu gösterisi: sana 'ağaç' rolü verildi. Repliğin yok, duruşun var.",
             choices: [
                 choice("cocukluk.anaokulGosterisi", "agac", .safe,
@@ -113,7 +113,7 @@ enum ChildhoodEventsB {
         ),
 
         decision(
-            "cocukluk.yagmurdaOyun", seasons: [.cocukluk], w: 10,
+            "cocukluk.yagmurdaOyun", seasons: [.cocukluk], from: 3, w: 10,
             tr: "Sağanak başladı; sokakta su birikintileri parlıyor. Pencere mi, çamur mu?",
             choices: [
                 choice("cocukluk.yagmurdaOyun", "cam", .safe,
@@ -137,13 +137,13 @@ enum ChildhoodEventsB {
         ),
 
         news(
-            "cocukluk.kayipDis", seasons: [.cocukluk], w: 10,
+            "cocukluk.kayipDis", seasons: [.cocukluk, .okul], from: 5, to: 7, w: 10,
             tr: "İlk diş düştü! Yastık altı ekonomisiyle tanıştın; kur sabit: bir diş, bir sevinç.",
             fx: [hp(1), tl(100)]
         ),
 
         news(
-            "cocukluk.ilkFotograf", seasons: [.cocukluk], w: 8,
+            "cocukluk.ilkFotograf", seasons: [.cocukluk], to: 3, w: 8,
             tr: "Aile albümüne ilk stüdyo fotoğrafı girdi: herkes çok ciddi, sen şaşkın, fon gökkuşağı.",
             fx: [hp(1)]
         ),

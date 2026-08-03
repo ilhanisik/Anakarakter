@@ -66,6 +66,14 @@ public enum LifeEngine {
             state.stats.add(-1, to: .health)
         }
 
+        // AKE doğal erozyonu: ana karakterlik sürekli çabayla korunur.
+        // Cesur bir seçim (+6) iki yıllık erozyonu fazlasıyla karşılar; amaç
+        // ceza değil, göstergenin tavana yapışıp ölü çubuğa dönmesini önlemek
+        // (docs/01: "AKE asla ceza aracı değildir" korunur).
+        if state.age >= 6 {
+            state.stats.add(-2, to: .ake)
+        }
+
         let events = EventDeck.drawYearEvents(state: &state, catalog: catalog)
         return YearStart(state: state, events: events)
     }
@@ -82,13 +90,17 @@ public enum LifeEngine {
 
         // Haber olayı: etkiler doğrudan uygulanır.
         guard event.isDecision else {
+            let akeBefore = state.stats.ake
             state.apply(event.onOccur)
-            let akeAfter = state.stats.ake
             state.log.append(LifeLogEntry(
                 age: state.age, eventID: event.id, choiceID: nil,
-                text: event.text, akeDelta: 0, akeAfter: akeAfter
+                text: event.text, akeDelta: state.stats.ake - akeBefore,
+                akeAfter: state.stats.ake, sceneWeight: Self.rawAKEEffect(in: event.onOccur)
             ))
-            return EventResolution(state: state, text: event.text, effects: event.onOccur, akeDelta: 0)
+            return EventResolution(
+                state: state, text: event.text, effects: event.onOccur,
+                akeDelta: state.stats.ake - akeBefore
+            )
         }
 
         // Karar olayı: seçim zorunlu ve görünür olmalı.
@@ -101,8 +113,11 @@ public enum LifeEngine {
         }
 
         // Cesaret AKE'si + sonuç zarı + etkiler.
+        // Bonus azalan verimlidir (AKEModel): gösterge ömür boyu canlı kalsın.
         let akeBefore = state.stats.ake
-        state.apply(.stat(.ake, choice.boldness.akeDelta))
+        state.apply(.stat(.ake, AKEModel.appliedDelta(
+            base: choice.boldness.akeDelta, currentAKE: akeBefore
+        )))
         let outcome = OutcomeRoller.roll(outcomes: choice.outcomes, rng: &state.rng)
 
         var appliedEffects: [Effect] = []
@@ -120,11 +135,22 @@ public enum LifeEngine {
         }
 
         let akeDelta = state.stats.ake - akeBefore
+        // Sahne ağırlığı: cesaret bonusu + sonucun ham AKE etkisi (clamp'siz).
+        let sceneWeight = choice.boldness.akeDelta + Self.rawAKEEffect(in: appliedEffects)
         state.log.append(LifeLogEntry(
             age: state.age, eventID: event.id, choiceID: choiceID,
-            text: resolutionText, akeDelta: akeDelta, akeAfter: state.stats.ake
+            text: resolutionText, akeDelta: akeDelta,
+            akeAfter: state.stats.ake, sceneWeight: sceneWeight
         ))
         return EventResolution(state: state, text: resolutionText, effects: appliedEffects, akeDelta: akeDelta)
+    }
+
+    /// Etkilerdeki ham (clamp uygulanmamış) AKE toplamı.
+    private static func rawAKEEffect(in effects: [Effect]) -> Int {
+        effects.reduce(0) { total, effect in
+            if case let .stat(.ake, delta) = effect { return total + delta }
+            return total
+        }
     }
 
     public static func finishYear(_ input: LifeState) throws -> YearEnd {

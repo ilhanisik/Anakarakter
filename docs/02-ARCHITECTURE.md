@@ -57,6 +57,28 @@ Modül: `LifeDomain`
 - Debug'da Google test kimlikleri; gerçek kimlikler yalnız Release. `--uitest-clean` bayrağıyla reklamsız test koşusu (Köken deseni).
 - AdMob konsolunda uygulama + birimler Faz 4'te açılır; kimlikler bu dokümana işlenir.
 
+### AdMob kimlikleri (2026-08-03)
+
+| Alan | Kimlik | Durum |
+|---|---|---|
+| Uygulama | `ca-app-pub-9761096075581160~6562713925` | Info.plist |
+| Geçişli | `ca-app-pub-9761096075581160/5249632253` | **kullanılıyor** — jenerik sonrası |
+| Ödüllü | `ca-app-pub-9761096075581160/7005567052` | **kullanılıyor** — Şans Tekrarı + Ekstra Sahne |
+| Banner | `…/7114926429` | KULLANILMIYOR — "banner ASLA" |
+| Uygulama açılışı | `…/5058060560` | KULLANILMIYOR — açılışta zorunlu reklam yok |
+| Yerel gelişmiş | `…/4492632512` | KULLANILMIYOR — onaylı yerleşim setinde yok |
+| Ödüllü geçişli | `…/3873117190` | KULLANILMIYOR — kendi açılan format, ödüllü sözleşmesini bozar |
+
+Debug'da Google test kimlikleri kullanılır (`AdUnits`); gerçek kimlikler yalnız Release'e girer.
+
+## Satın Alma (StoreKit 2)
+
+- Tek ürün: `com.isiksoft.anakarakter.removeads` — **non-consumable**, abonelik yok.
+- `StoreServicing` protokolü + `StoreKitStoreService` + `InMemoryStoreService` ikizi.
+- `Transaction.updates` dinleyicisi uygulama ömrü boyunca açık (Ask to Buy, başka cihaz).
+- Satın alma gerçeği mağazadan okunur; `SettingsModel.removeAdsPurchased` yalnız kopyadır ve `AdPolicy` bu kopyayı okur.
+- Yerel test: `AnaKarakter.storekit` (Xcode şemasında StoreKit Configuration olarak seçilir).
+
 ## Paylaşım Kartı
 
 - `CreditsComposer` verisi → SwiftUI görünümü → `ImageRenderer` → `ShareLink` (kare + story varyantı).
@@ -83,4 +105,9 @@ Modül: `LifeDomain`
 - 2026-08-01 — (Faz 1) Olay içeriği app'teki `Content/` yerine pakette `LifeContent` hedefinde yaşar: 10k simülasyon kapısı ve ContentLint'in `swift test` ile Xcode'suz koşması ancak böyle mümkün. App Faz 2'de `import LifeContent` ile kataloğu alır; katmanlar tablosundaki `Content/` girdisi bu hedefe işaret eder.
 - 2026-08-01 — (Faz 1) Olay metinleri `EventText(key:tr:)` şemasında: `key` String Catalog anahtarı (Faz 2'de arayüz bağlanır), `tr` MVP kaynak metni ContentLint denetiminden geçer (uzunluk + içerik çizgisi + anahtar benzersizliği). Yerelleştirilebilir şema korunur; EN içerik kararı değişmedi.
 - 2026-08-01 — (Faz 1) Motor API'si üç adımlı saf zincir: `beginYear` (gelir + erozyon + deste) → olay başına `resolve` → `finishYear` (ölüm zarı). Yılın olay listesi yıl başında sabitlenir; takip olayları en az 1 yıl gecikmelidir. RNG durumu `LifeState` içindedir — ara kayıttan devam bit-bit deterministiktir (Codable roundtrip testi ile sabit).
+- 2026-08-03 — (Faz 4) `AdPolicy` oyun domain'inde değil ayrı `AppPolicy` paketinde: reklam bir oyun kuralı değil uygulama politikasıdır, ama saf ve testli olmalıdır (`swift test` ile SDK'sız koşar).
+- 2026-08-03 — (Faz 4) "Reklamları Kaldır" satın alan oyuncuya ödüllü içerik reklamsız verilir (`AdDecision.grantWithoutAd`); limitler (hayat başına 1 Şans Tekrarı) aynı kalır. Satın alanı ödül için yine reklam izlemeye zorlamak karanlık desen sayıldı.
+- 2026-08-03 — (Faz 4) Şans Tekrarı geri sarma yaparken RNG'yi geri SARMAZ (`LuckRetry.rewind`): anlık görüntü rastgeleliği de geri saraydı aynı sonuç çıkar, "tekrar" aldatmaca olurdu. Determinizm korunur.
+- 2026-08-03 — (Faz 4) Telafi hakkı kazanılır, satılmaz: reklamla veya IAP ile telafi alınamaz (karanlık desen yasağı).
+- 2026-08-03 — (Faz 4) `#Index`/`#Unique` kullanılmadı: iOS 18+ gerektiriyor, hedef iOS 17.
 - 2026-08-01 — (Faz 1) AKE ekonomisi: cesaret etiketi (`safe -3 / neutral 0 / bold +6`) çözümde otomatik uygulanır; denge kuralı lint'te ölçülür (materyal EV farkı ≤ 6, cesur varyans > güvenli varyans; AKE ve bayraklar materyal skora girmez). `maxStat(.ake)` koşulu lint'te yasak — düşük AKE asla kapı kapatmaz.

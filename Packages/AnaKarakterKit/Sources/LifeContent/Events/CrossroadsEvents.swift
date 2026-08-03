@@ -5,9 +5,9 @@ enum CrossroadsEvents {
     static let all: [LifeEvent] = [
 
         news(
-            "yol.kykYurdu", seasons: [.yolAyrimi], w: 10,
+            "yol.devletYurdu", seasons: [.yolAyrimi], to: 21, w: 10,
             cond: [.hasFlag(.universiteli)],
-            tr: "KYK yurdunda ilk gece: beş kişi, bir çaydanlık, sabaha kadar muhabbet. Çaydanlık kardeşliği kuruldu.",
+            tr: "Devlet yurdunda ilk gece: beş kişi, bir çaydanlık, sabaha kadar muhabbet. Çaydanlık kardeşliği kuruldu.",
             fx: [so(3)]
         ),
 
@@ -82,7 +82,7 @@ enum CrossroadsEvents {
         ),
 
         decision(
-            "yol.staj", seasons: [.yolAyrimi], w: 10,
+            "yol.staj", seasons: [.yolAyrimi], from: 20, w: 10,
             cond: [.hasFlag(.universiteli), .lacksFlag(.stajYapti)],
             tr: "Staj dönemi. Bölümün anlaşmalı listesi güvenli; ama hayalindeki yerin kapısı da orada duruyor.",
             choices: [
@@ -131,7 +131,7 @@ enum CrossroadsEvents {
         ),
 
         decision(
-            "yol.ehliyet", seasons: [.yolAyrimi], w: 10,
+            "yol.ehliyet", seasons: [.yolAyrimi], to: 20, w: 10,
             cond: [.lacksFlag(.ehliyetVar)],
             tr: "Ehliyet zamanı. Direksiyon hocasının ayağı kendi tarafındaki pedala hiç bu kadar yakın olmamıştı.",
             choices: [

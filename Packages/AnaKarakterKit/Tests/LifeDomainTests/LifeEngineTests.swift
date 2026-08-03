@@ -42,14 +42,63 @@ struct LifeEngineTests {
         ])
         let state = Fixture.state(age: 10, social: 50, ake: 50)
 
+        // Cesaret bonusu azalan verimlidir: AKE 50'de ham +6 → uygulanan +3.
         let bold = try LifeEngine.resolve(event: event, choiceID: ChoiceID("cesur"), state: state)
-        #expect(bold.state.stats.ake == 56) // bold: +6
+        #expect(bold.state.stats.ake == 53)
         #expect(bold.state.stats.social == 55)
-        #expect(bold.akeDelta == 6)
+        #expect(bold.akeDelta == 3)
+        // Sahne ağırlığı ham cesaret etkisini korur — jenerik sahne seçimi
+        // AKE tavanından/eğrisinden etkilenmez.
+        #expect(bold.state.log[0].sceneWeight == 6)
         #expect(bold.state.log[0].choiceID == ChoiceID("cesur"))
 
+        // Güvenli seçimin bedeli AKE seviyesinden bağımsız, sabit.
         let safe = try LifeEngine.resolve(event: event, choiceID: ChoiceID("temkinli"), state: state)
         #expect(safe.state.stats.ake == 47) // safe: -3
+    }
+
+    @Test("Aynı cesaret düşük AKE'de çok, yüksek AKE'de az yükseltir")
+    func boldGainDiminishes() throws {
+        let event = Fixture.decision("karar", choices: [
+            Fixture.choice("cesur", .bold, outcomes: [Fixture.outcome("olumlu", fx: [])]),
+            Fixture.choice("temkinli", .safe, outcomes: [Fixture.outcome("sakin", fx: [])]),
+        ])
+        func gain(atAKE ake: Int) throws -> Int {
+            try LifeEngine.resolve(
+                event: event, choiceID: ChoiceID("cesur"), state: Fixture.state(age: 30, ake: ake)
+            ).akeDelta
+        }
+        #expect(try gain(atAKE: 0) == 6)
+        #expect(try gain(atAKE: 50) == 3)
+        #expect(try gain(atAKE: 80) == 1)
+        // Tavana yakınken cesaret artık yükseltmez; gösterge doyuma ulaşmaz.
+        #expect(try gain(atAKE: 95) == 0)
+    }
+
+    @Test("AKE doğal erozyonu 6 yaşından itibaren işler, ceza kapısı açmaz")
+    func akeErosion() throws {
+        let catalog = Fixture.catalog([])
+        let child = try LifeEngine.beginYear(Fixture.state(age: 3, ake: 50), catalog: catalog)
+        #expect(child.state.stats.ake == 50) // çocuklukta erozyon yok
+
+        let adult = try LifeEngine.beginYear(Fixture.state(age: 30, ake: 50), catalog: catalog)
+        #expect(adult.state.stats.ake == 48) // 6+ → yılda -2
+
+        // Erozyon AKE'yi negatife düşürmez (clamp korunur).
+        let empty = try LifeEngine.beginYear(Fixture.state(age: 30, ake: 0), catalog: catalog)
+        #expect(empty.state.stats.ake == 0)
+    }
+
+    @Test("AKE tavandayken bile cesur seçim sahne ağırlığı taşır")
+    func sceneWeightSurvivesClamp() throws {
+        let event = Fixture.decision("karar", choices: [
+            Fixture.choice("cesur", .bold, outcomes: [Fixture.outcome("o", fx: [.stat(.ake, 4)])]),
+        ])
+        // AKE zaten tavanda: stat değişimi 0 ama sahne ağırlığı 6 + 4 = 10.
+        let maxed = Fixture.state(ake: 100)
+        let resolution = try LifeEngine.resolve(event: event, choiceID: ChoiceID("cesur"), state: maxed)
+        #expect(resolution.akeDelta == 0)
+        #expect(resolution.state.log[0].sceneWeight == 10)
     }
 
     @Test("Takip olayı en az 1 yıl gecikmeyle kuyruğa girer")
@@ -149,14 +198,28 @@ struct ScoringTests {
         var state = Fixture.state()
         state.deathAge = 70
         state.log = [
-            LifeLogEntry(age: 10, eventID: EventID("a"), choiceID: nil, text: Fixture.text("a"), akeDelta: 6, akeAfter: 56),
-            LifeLogEntry(age: 20, eventID: EventID("b"), choiceID: nil, text: Fixture.text("b"), akeDelta: 2, akeAfter: 58),
-            LifeLogEntry(age: 30, eventID: EventID("c"), choiceID: nil, text: Fixture.text("c"), akeDelta: 9, akeAfter: 67),
-            LifeLogEntry(age: 40, eventID: EventID("d"), choiceID: nil, text: Fixture.text("d"), akeDelta: -3, akeAfter: 64),
-            LifeLogEntry(age: 50, eventID: EventID("e"), choiceID: nil, text: Fixture.text("e"), akeDelta: 7, akeAfter: 71),
+            LifeLogEntry(age: 10, eventID: EventID("a"), choiceID: nil, text: Fixture.text("a"), akeDelta: 6, akeAfter: 56, sceneWeight: 6),
+            LifeLogEntry(age: 20, eventID: EventID("b"), choiceID: nil, text: Fixture.text("b"), akeDelta: 2, akeAfter: 58, sceneWeight: 2),
+            LifeLogEntry(age: 30, eventID: EventID("c"), choiceID: nil, text: Fixture.text("c"), akeDelta: 9, akeAfter: 67, sceneWeight: 9),
+            LifeLogEntry(age: 40, eventID: EventID("d"), choiceID: nil, text: Fixture.text("d"), akeDelta: -3, akeAfter: 64, sceneWeight: -3),
+            LifeLogEntry(age: 50, eventID: EventID("e"), choiceID: nil, text: Fixture.text("e"), akeDelta: 7, akeAfter: 71, sceneWeight: 7),
         ]
         let card = CreditsComposer.compose(from: state)
         #expect(card.memorableScenes.map(\.age) == [10, 30, 50]) // en büyük 3 delta: 9,7,6 → kronolojik
+    }
+
+    @Test("Jenerik sahneleri üç perdeye yayılır — tek döneme yığılmaz")
+    func scenesSpreadAcrossActs() {
+        var state = Fixture.state()
+        state.deathAge = 90
+        // Çocuklukta üç eşit güçte sahne + orta ve final perdelerde birer sahne.
+        state.log = [1, 2, 3, 40, 70].map { age in
+            LifeLogEntry(age: age, eventID: EventID("e\(age)"), choiceID: nil,
+                         text: Fixture.text("s\(age)"), akeDelta: 6, akeAfter: 60, sceneWeight: 6)
+        }
+        let card = CreditsComposer.compose(from: state)
+        // Eski kural [1,2,3] seçerdi; perde kuralı ömrün tamamını anar.
+        #expect(card.memorableScenes.map(\.age) == [1, 40, 70])
     }
 
     @Test("Jenerik kartı kimlik ve yıl aralığını doğru kurar")

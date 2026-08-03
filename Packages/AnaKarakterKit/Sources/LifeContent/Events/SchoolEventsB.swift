@@ -11,7 +11,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.satrancKulubu", seasons: [.okul], w: 10,
+            "okul.satrancKulubu", seasons: [.okul], from: 8, w: 10,
             tr: "Okulda satranç kulübü açıldı; panoda turnuva ilanı asılı.",
             choices: [
                 choice("okul.satrancKulubu", "izleyici", .safe,
@@ -59,7 +59,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.kermes", seasons: [.okul], w: 10,
+            "okul.kermes", seasons: [.okul], from: 8, w: 10,
             tr: "Okul kermesi yaklaşıyor; sınıfın standı sana emanet edildi.",
             choices: [
                 choice("okul.kermes", "limonata", .neutral,
@@ -89,7 +89,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.matematikSinavi", seasons: [.okul], w: 10, cd: .years(3),
+            "okul.matematikSinavi", seasons: [.okul], from: 8, w: 10, cd: .years(3),
             tr: "Matematik yazılısı kapıda. Konu: problemler. Hayat: aynen öyle.",
             choices: [
                 choice("okul.matematikSinavi", "planli", .safe,
@@ -113,7 +113,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.okulKorosu", seasons: [.okul], w: 10,
+            "okul.okulKorosu", seasons: [.okul], from: 8, w: 10,
             tr: "Okul korosu üye arıyor; müzik öğretmeni gözüne kestirdiklerini tek tek çağırıyor.",
             choices: [
                 choice("okul.okulKorosu", "katil", .neutral,
@@ -134,7 +134,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.vitrindekiSey", seasons: [.okul], w: 10, cd: .years(3),
+            "okul.vitrindekiSey", seasons: [.okul], from: 8, w: 10, cd: .years(3),
             tr: "Vitrindeki o şey sana bakıyor. Harçlık hesabı yapıldı: üç hafta, belki dört.",
             choices: [
                 choice("okul.vitrindekiSey", "biriktir", .safe,
@@ -164,7 +164,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.bilgisayarKursu", seasons: [.okul], w: 10,
+            "okul.bilgisayarKursu", seasons: [.okul], from: 10, w: 10,
             tr: "Bilgisayar dersinde bir şey dikkatini çekti: bu kutu, söyleneni yapıyor.",
             choices: [
                 choice("okul.bilgisayarKursu", "okulKursu", .safe,
@@ -188,7 +188,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.ilkTelefon", seasons: [.okul], w: 10,
+            "okul.ilkTelefon", seasons: [.okul], from: 11, w: 10,
             tr: "İlk telefon meselesi evde gündemin bir numarası.",
             choices: [
                 choice("okul.ilkTelefon", "ailePlani", .neutral,
@@ -209,7 +209,7 @@ enum SchoolEventsB {
         ),
 
         decision(
-            "okul.alanSecimi", seasons: [.okul], w: 10,
+            "okul.alanSecimi", seasons: [.okul], from: 14, to: 15, w: 10,
             tr: "Lisede alan seçimi haftası: sayısal mı, sözel mi, eşit ağırlık mı? Herkesin bir fikri var.",
             choices: [
                 choice("okul.alanSecimi", "sayisal", .neutral,
@@ -237,7 +237,7 @@ enum SchoolEventsB {
         ),
 
         news(
-            "okul.kutuphaneKesfi", seasons: [.okul], w: 8,
+            "okul.kutuphaneKesfi", seasons: [.okul], from: 9, w: 8,
             cond: [.hasFlag(.kitapKurdu)],
             tr: "Şehir kütüphanesinde kendi köşeni buldun; görevli artık seni ismiyle karşılıyor.",
             fx: [iq(3)]

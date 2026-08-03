@@ -5,7 +5,7 @@ enum FinalSeasonEvents {
     static let all: [LifeEvent] = [
 
         news(
-            "final.torun", seasons: [.finalSezonu], w: 12,
+            "final.torun", seasons: [.finalSezonu], from: 66, w: 12,
             cond: [.hasFlag(.cocukVar)],
             tr: "Torun geldi! Evin şeker stoğu ikiye katlandı, kurallar yarıya indi.",
             fx: [hp(6), flag(.torunVar), rol("torunSevdalisi", "Torun sevdalısı")]
@@ -46,7 +46,7 @@ enum FinalSeasonEvents {
         ),
 
         decision(
-            "final.nasihat", seasons: [.finalSezonu], w: 10,
+            "final.nasihat", seasons: [.finalSezonu], from: 70, w: 10,
             cond: [.minStat(.social, 40)], cd: .years(4),
             tr: "Mahalledeki gençler fikrini soruyor; çay senden, dikkat onlardan.",
             choices: [

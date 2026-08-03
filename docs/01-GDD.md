@@ -94,3 +94,4 @@ Metin-öncelikli oyun = erişilebilirlikte fırsat: VoiceOver ile UÇTAN UCA oyn
 - 2026-08-01 — Cinsiyet/karakter üretimi: MVP'de karakter seed'den gelir (isim/aile/mahalle); oyuncu düzenlemesi MVP sonrası.
 - 2026-08-01 — Askerlik, göç, sağlık gibi hassas omurga olayları içerik çizgisi süzgecinden geçer; ilk içerik turunda SAHİP okuması alınır.
 - 2026-08-01 — EN olay içeriği ertelendi (kültürel içerik çeviriden fazlası); arayüz TR+EN.
+- 2026-08-01 — (Faz 3, SAHİP kararı) Oyundaki kurum adları KURGUSAL: LGS → **BLS** (Büyük Lise Sınavı), ÖSYM → **UYS** (Ulusal Yerleştirme Sınavı), KYK yurdu → **devlet yurdu**. Kültürel doku korunur, gerçek kurum adı kullanılmaz; GDD gövdesindeki gerçek adlar tasarım referansıdır.

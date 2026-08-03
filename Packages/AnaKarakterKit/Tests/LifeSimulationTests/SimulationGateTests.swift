@@ -10,6 +10,8 @@ import LifeContent
 @Suite("10.000 hayat simülasyon kapısı")
 struct SimulationGateTests {
     static let lifeCount = 10_000
+    /// Kapsama taramasında her oyun tarzı için koşulan ömür sayısı.
+    static let styleSweepCount = 1_000
 
     /// Tek koşuda tüm invariant'lar — 10k hayat bir kez simüle edilir.
     @Test("10.000 seed'li ömür: invariant'lar ve kapsama", .timeLimit(.minutes(5)))
@@ -72,7 +74,24 @@ struct SimulationGateTests {
         let mean = Double(deathAges.reduce(0, +)) / Double(deathAges.count)
         #expect((70.0...85.0).contains(mean), "ortalama ölüm yaşı \(mean)")
 
-        // Reachability: her olay 10.000 hayatın en az birinde tetiklendi.
+        // Reachability, makul oyun tarzları üzerinden ölçülür. Rastgele karar
+        // veren oyuncu AKE'yi ~55'in üstüne çıkaramaz (AKEModel azalan verim),
+        // oysa "SAHNE SENİN" olayları bilinçli olarak yüksek AKE ile açılır —
+        // yazı-tura atan oyuncunun onlara ulaşması BEKLENMEZ. Kapı bu yüzden
+        // rastgele + hep cesur + hep güvenli tarzlarının birleşimine bakar.
+        for seed in 0..<Self.styleSweepCount {
+            for style in [Boldness.bold, .safe] {
+                var policy = BoldnessPolicy(preferred: style)
+                let life = try LifeSimulator.simulateLife(
+                    personSeed: UInt64(seed) &+ 500_000,
+                    deckSeed: UInt64(seed) &* 31 &+ 11,
+                    catalog: catalog,
+                    policy: &policy
+                )
+                for entry in life.log { triggeredEventIDs.insert(entry.eventID) }
+            }
+        }
+
         let unreached = allEventIDs.subtracting(triggeredEventIDs)
         #expect(unreached.isEmpty, "ulaşılmayan olaylar: \(unreached.map(\.rawValue).sorted())")
 
@@ -180,5 +199,15 @@ struct SimulationGateTests {
             state = try LifeEngine.finishYear(state).state
         }
         return state
+    }
+}
+
+/// Tek bir cesaret seviyesini tercih eden oyuncu — AKE ekonomisinin uçlarını
+/// (hep cesur / hep güvenli) test etmek için.
+struct BoldnessPolicy: DecisionPolicy {
+    let preferred: Boldness
+
+    mutating func choose(event: LifeEvent, eligibleChoices: [Choice], state: LifeState) -> ChoiceID {
+        (eligibleChoices.first { $0.boldness == preferred } ?? eligibleChoices[0]).id
     }
 }

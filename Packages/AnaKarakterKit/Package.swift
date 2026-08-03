@@ -10,13 +10,21 @@ let package = Package(
     products: [
         .library(name: "LifeDomain", targets: ["LifeDomain"]),
         .library(name: "LifeContent", targets: ["LifeContent"]),
+        .library(name: "AppPolicy", targets: ["AppPolicy"]),
     ],
     targets: [
         .target(name: "LifeDomain"),
         .target(name: "LifeContent", dependencies: ["LifeDomain"]),
+        // Oyun kuralı değil, uygulama politikası (reklam). Saf ve testli
+        // tutulur ki SDK'sız doğrulanabilsin — CLAUDE.md reklam politikası.
+        .target(name: "AppPolicy"),
         .testTarget(
             name: "LifeDomainTests",
             dependencies: ["LifeDomain"]
+        ),
+        .testTarget(
+            name: "AppPolicyTests",
+            dependencies: ["AppPolicy"]
         ),
         .testTarget(
             name: "ContentLintTests",

@@ -101,13 +101,13 @@ enum SchoolEvents {
         ),
 
         news(
-            "okul.ilkKanka", seasons: [.okul], w: 14,
+            "okul.ilkKanka", seasons: [.okul], to: 12, w: 14,
             tr: "Sıra arkadaşın değişti. Üçüncü teneffüste ortak düşman (matematik) sizi kanka yaptı.",
             fx: [so(4), flag(.kanka)]
         ),
 
         decision(
-            "okul.kopyaKrizi", seasons: [.okul], w: 10,
+            "okul.kopyaKrizi", seasons: [.okul], from: 9, w: 10,
             tr: "Sınavda yan sıradan kopya kağıdı uzatıldı. Hoca camdan dışarı bakıyor.",
             choices: [
                 choice("okul.kopyaKrizi", "bildigin", .safe,
@@ -158,7 +158,7 @@ enum SchoolEvents {
         ),
 
         decision(
-            "okul.dersMiOyunMu", seasons: [.okul], w: 10, cd: .years(3),
+            "okul.dersMiOyunMu", seasons: [.okul], from: 9, w: 10, cd: .years(3),
             tr: "Yarın sınav var; ama konsolda dün çıkan oyun duruyor.",
             choices: [
                 choice("okul.dersMiOyunMu", "ders", .safe,
@@ -182,7 +182,7 @@ enum SchoolEvents {
         ),
 
         decision(
-            "okul.mahalleTurnuvasi", seasons: [.okul], w: 10,
+            "okul.mahalleTurnuvasi", seasons: [.okul], from: 9, w: 10,
             tr: "Mahalleler arası turnuva finali. Skor eşit, son dakika penaltısı sizde.",
             choices: [
                 choice("okul.mahalleTurnuvasi", "tribun", .safe,
