@@ -196,6 +196,27 @@ final class LifeFlowViewModel {
         phase = .readyForYear
     }
 
+#if DEBUG
+    /// GEÇİCİ — yalnız Debug. Hayatı sonuna kadar hızlı sarar.
+    ///
+    /// Yalnız doğrulama içindir: jenerik ekranının görüntüsünü almak ve
+    /// jenerik sonrası geçişli reklamın gerçekten çıktığını görmek için bir
+    /// ömrü elle oynamak ~75 dokunuş sürüyor. Release'e ASLA girmez ve
+    /// doğrulama bitince silinmelidir.
+    func debugFastForwardToEnd() {
+        var guardCounter = 0
+        while !isEnded, guardCounter < 5_000 {
+            guardCounter += 1
+            if case .decision = phase {
+                guard let first = eligibleChoices.first else { break }
+                choose(first.id)
+            } else {
+                liveYear()
+            }
+        }
+    }
+#endif
+
     // MARK: Yıl akışı
 
     private func processNextEvent() {

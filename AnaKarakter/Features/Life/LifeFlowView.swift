@@ -155,6 +155,15 @@ struct LifeFlowView: View {
         .sheet(isPresented: $showsTimeline) {
             NavigationStack { timelineSheet }
         }
+        #if DEBUG
+        // GEÇİCİ doğrulama kısayolu — bkz. debugFastForwardToEnd().
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("⏩") { viewModel.debugFastForwardToEnd() }
+                    .accessibilityHidden(true)
+            }
+        }
+        #endif
     }
 
     /// Hayat henüz başlamadı — ilk kart bir davet.
