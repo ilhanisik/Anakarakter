@@ -1,1434 +1,1437 @@
 {
-  "sourceLanguage": "tr",
-  "strings": {
-    "a11y.choice.bold": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bold choice: high risk, the scene is yours."
+  "sourceLanguage" : "tr",
+  "strings" : {
+    "%lld/100" : {
+
+    },
+    "a11y.choice.bold" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold choice: high risk, the scene is yours."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cesur seçim: risk yüksek, sahne senin."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cesur seçim: risk yüksek, sahne senin."
           }
         }
       }
     },
-    "a11y.choice.neutral": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Balanced choice."
+    "a11y.choice.neutral" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balanced choice."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dengeli seçim."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengeli seçim."
           }
         }
       }
     },
-    "a11y.choice.safe": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Safe choice."
+    "a11y.choice.safe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safe choice."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Güvenli seçim."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güvenli seçim."
           }
         }
       }
     },
-    "ads.extraScene": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Extra Scene"
+    "ads.extraScene" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra Scene"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ekstra Sahne"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekstra Sahne"
           }
         }
       }
     },
-    "ads.extraScene.hint": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add one more scene to the credits."
+    "ads.extraScene.hint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add one more scene to the credits."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jeneriğe bir sahne daha ekle."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeneriğe bir sahne daha ekle."
           }
         }
       }
     },
-    "ads.luckRetry": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Luck Retry"
+    "ads.luckRetry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luck Retry"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Şans Tekrarı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şans Tekrarı"
           }
         }
       }
     },
-    "ads.luckRetry.hint": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Roll this outcome one more time."
+    "ads.luckRetry.hint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll this outcome one more time."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bu sonucu bir kez daha çevir."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu sonucu bir kez daha çevir."
           }
         }
       }
     },
-    "archive.dailyBadge": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Life of the Day"
+    "archive.dailyBadge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Life of the Day"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Günün Hayatı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günün Hayatı"
           }
         }
       }
     },
-    "archive.delete": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
+    "archive.delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sil"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
           }
         }
       }
     },
-    "archive.empty.failed": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The archive couldn't be read right now. The game is unaffected; try again later."
+    "archive.empty.failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The archive couldn't be read right now. The game is unaffected; try again later."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arşiv şu an okunamadı. Oyun etkilenmez; daha sonra yeniden dene."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arşiv şu an okunamadı. Oyun etkilenmez; daha sonra yeniden dene."
           }
         }
       }
     },
-    "archive.empty.message": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Every life you finish leaves a credits card here."
+    "archive.empty.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every life you finish leaves a credits card here."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Biten her hayat buraya bir jenerik kartı bırakır."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biten her hayat buraya bir jenerik kartı bırakır."
           }
         }
       }
     },
-    "archive.empty.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The archive is empty"
+    "archive.empty.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The archive is empty"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arşiv henüz boş"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arşiv henüz boş"
           }
         }
       }
     },
-    "archive.missing.message": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The record may have been deleted."
+    "archive.missing.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The record may have been deleted."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kayıt silinmiş olabilir."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kayıt silinmiş olabilir."
           }
         }
       }
     },
-    "archive.missing.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This life wasn't found"
+    "archive.missing.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This life wasn't found"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bu hayat bulunamadı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu hayat bulunamadı"
           }
         }
       }
     },
-    "archive.poster.a11y %@ %lld %lld %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@, %2$lld–%3$lld, %4$lld points"
+    "archive.poster.a11y %@ %lld %lld %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$lld–%3$lld, %4$lld points"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@, %2$lld–%3$lld, %4$lld puan"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$lld–%3$lld, %4$lld puan"
           }
         }
       }
     },
-    "archive.score %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld pts"
+    "archive.score %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld pts"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld puan"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld puan"
           }
         }
       }
     },
-    "archive.sort": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sort"
+    "archive.sort" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sırala"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sırala"
           }
         }
       }
     },
-    "archive.sort.newest": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Newest"
+    "archive.sort.newest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Newest"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En yeni"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En yeni"
           }
         }
       }
     },
-    "archive.sort.score": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Highest score"
+    "archive.sort.score" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Highest score"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En yüksek puan"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En yüksek puan"
           }
         }
       }
     },
-    "archive.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Credits Archive"
+    "archive.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credits Archive"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jenerik Arşivi"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenerik Arşivi"
           }
         }
       }
     },
-    "common.done": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
+    "common.done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bitti"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitti"
           }
         }
       }
     },
-    "common.ok": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+    "common.ok" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamam"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
           }
         }
       }
     },
-    "credits.skip": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skip"
+    "credits.skip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geç"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geç"
           }
         }
       }
     },
-    "life.age %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Age %lld"
+    "life.age %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age %lld"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld yaşında"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld yaşında"
           }
         }
       }
     },
-    "life.creditsRoll": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The credits roll…"
+    "life.creditsRoll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The credits roll…"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jenerik akıyor…"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenerik akıyor…"
           }
         }
       }
     },
-    "life.liveYear": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Live the Year"
+    "life.liveYear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live the Year"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yılı Yaşa"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yılı Yaşa"
           }
         }
       }
     },
-    "life.opening.body": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap below to live the first year."
+    "life.opening.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap below to live the first year."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "İlk yılı yaşamak için aşağıdaki düğmeye bas."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İlk yılı yaşamak için aşağıdaki düğmeye bas."
           }
         }
       }
     },
-    "life.opening.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The scene is yours."
+    "life.opening.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The scene is yours."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sahne senin."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sahne senin."
           }
         }
       }
     },
-    "life.timeline": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Timeline"
+    "life.timeline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timeline"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zaman Çizelgesi"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaman Çizelgesi"
           }
         }
       }
     },
-    "menu.archive": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Credits Archive"
+    "menu.archive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credits Archive"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jenerik Arşivi"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenerik Arşivi"
           }
         }
       }
     },
-    "menu.daily.done": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You've lived today's life. You can watch the credits again."
+    "menu.daily.done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You've lived today's life. You can watch the credits again."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bugünün hayatını yaşadın. Jeneriği yeniden izleyebilirsin."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün hayatını yaşadın. Jeneriği yeniden izleyebilirsin."
           }
         }
       }
     },
-    "menu.daily.grace %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld comeback left"
+    "menu.daily.grace %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld comeback left"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld telafi hakkın var"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld telafi hakkın var"
           }
         }
       }
     },
-    "menu.daily.invite": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today's life is the same for everyone. Same baby, same deck — the difference is your choices."
+    "menu.daily.invite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's life is the same for everyone. Same baby, same deck — the difference is your choices."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bugünün hayatı herkes için aynı. Aynı bebek, aynı deste — fark senin kararlarında."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün hayatı herkes için aynı. Aynı bebek, aynı deste — fark senin kararlarında."
           }
         }
       }
     },
-    "menu.daily.play": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Live Today's Life"
+    "menu.daily.play" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live Today's Life"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bugünün Hayatını Yaşa"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün Hayatını Yaşa"
           }
         }
       }
     },
-    "menu.daily.review": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Watch the Credits Again"
+    "menu.daily.review" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watch the Credits Again"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jeneriği Yeniden İzle"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeneriği Yeniden İzle"
           }
         }
       }
     },
-    "menu.daily.streak %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld days"
+    "menu.daily.streak %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld gün"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld gün"
           }
         }
       }
     },
-    "menu.daily.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Life of the Day"
+    "menu.daily.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Life of the Day"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Günün Hayatı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günün Hayatı"
           }
         }
       }
     },
-    "menu.newLife": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Life"
+    "menu.newLife" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Life"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yeni Hayat"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Hayat"
           }
         }
       }
     },
-    "menu.settings": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "menu.settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ayarlar"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
           }
         }
       }
     },
-    "menu.tagline": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pick a life, play bold — when the credits roll, your name runs big."
+    "menu.tagline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a life, play bold — when the credits roll, your name runs big."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bir hayat seç, cesur oyna, jenerik aktığında adın büyük yazsın."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir hayat seç, cesur oyna, jenerik aktığında adın büyük yazsın."
           }
         }
       }
     },
-    "menu.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ana Karakter"
+    "menu.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Karakter"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ana Karakter"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Karakter"
           }
         }
       }
     },
-    "poster.a11y %@": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Season poster: %@"
+    "poster.a11y %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Season poster: %@"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sezon posteri: %@"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sezon posteri: %@"
           }
         }
       }
     },
-    "poster.act %@": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ACT %@"
+    "poster.act %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ACT %@"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PERDE %@"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PERDE %@"
           }
         }
       }
     },
-    "season.cocukluk": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Childhood"
+    "season.cocukluk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Childhood"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Çocukluk"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çocukluk"
           }
         }
       }
     },
-    "season.finalSezonu": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Final Season"
+    "season.finalSezonu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Final Season"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Final Sezonu"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Final Sezonu"
           }
         }
       }
     },
-    "season.kurulus": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Building Years"
+    "season.kurulus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Building Years"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kuruluş"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuruluş"
           }
         }
       }
     },
-    "season.okul": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "School"
+    "season.okul" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "School"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Okul"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okul"
           }
         }
       }
     },
-    "season.ortaSahne": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Middle Act"
+    "season.ortaSahne" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Middle Act"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Orta Sahne"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orta Sahne"
           }
         }
       }
     },
-    "season.yolAyrimi": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Crossroads"
+    "season.yolAyrimi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crossroads"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yol Ayrımı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yol Ayrımı"
           }
         }
       }
     },
-    "settings.about": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "About"
+    "settings.about" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hakkında"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hakkında"
           }
         }
       }
     },
-    "settings.archive": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Archive"
+    "settings.archive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archive"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arşiv"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arşiv"
           }
         }
       }
     },
-    "settings.archivedLives": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saved lives"
+    "settings.archivedLives" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved lives"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kayıtlı hayat"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kayıtlı hayat"
           }
         }
       }
     },
-    "settings.feel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feel"
+    "settings.feel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feel"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "His"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "His"
           }
         }
       }
     },
-    "settings.haptics": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Haptics"
+    "settings.haptics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptics"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Titreşim"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titreşim"
           }
         }
       }
     },
-    "settings.notice.failed": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Purchase couldn't be completed. You weren't charged."
+    "settings.notice.failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase couldn't be completed. You weren't charged."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Satın alma tamamlanamadı. Ücret alınmadı."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın alma tamamlanamadı. Ücret alınmadı."
           }
         }
       }
     },
-    "settings.notice.pending": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Purchase is awaiting approval."
+    "settings.notice.pending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase is awaiting approval."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Satın alma onay bekliyor."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın alma onay bekliyor."
           }
         }
       }
     },
-    "settings.notice.restored": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restore complete."
+    "settings.notice.restored" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore complete."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geri yükleme tamamlandı."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri yükleme tamamlandı."
           }
         }
       }
     },
-    "settings.purchases": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Purchases"
+    "settings.purchases" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchases"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Satın Alma"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın Alma"
           }
         }
       }
     },
-    "settings.removeAds": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remove Ads"
+    "settings.removeAds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Ads"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reklamları Kaldır"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reklamları Kaldır"
           }
         }
       }
     },
-    "settings.removeAds.owned": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ads removed. Thank you."
+    "settings.removeAds.owned" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads removed. Thank you."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reklamlar kaldırıldı. Teşekkürler."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reklamlar kaldırıldı. Teşekkürler."
           }
         }
       }
     },
-    "settings.restore": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restore Purchases"
+    "settings.restore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore Purchases"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Satın Alımları Geri Yükle"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın Alımları Geri Yükle"
           }
         }
       }
     },
-    "settings.sound": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sound"
+    "settings.sound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sound"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ses"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ses"
           }
         }
       }
     },
-    "settings.systemPreferences.note": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reduce Motion, text size and contrast preferences are read from iOS Settings."
+    "settings.systemPreferences.note" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reduce Motion, text size and contrast preferences are read from iOS Settings."
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hareket azaltma, metin boyutu ve kontrast tercihleri iOS Ayarlar'dan okunur."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareket azaltma, metin boyutu ve kontrast tercihleri iOS Ayarlar'dan okunur."
           }
         }
       }
     },
-    "settings.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "settings.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ayarlar"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
           }
         }
       }
     },
-    "settings.version": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Version"
+    "settings.version" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sürüm"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sürüm"
           }
         }
       }
     },
-    "share.square": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Square Card"
+    "share.square" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Square Card"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kare Kart"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kare Kart"
           }
         }
       }
     },
-    "share.story": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Story Card"
+    "share.story" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Story Card"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Story Kart"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Story Kart"
           }
         }
       }
     },
-    "stat.ake": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MCE"
+    "stat.ake" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCE"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "AKE"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AKE"
           }
         }
       }
     },
-    "stat.ake.full": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Main Character Energy"
+    "stat.ake.full" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main Character Energy"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ana Karakter Enerjisi"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Karakter Enerjisi"
           }
         }
       }
     },
-    "stat.happiness": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Happiness"
+    "stat.happiness" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Happiness"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mutluluk"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mutluluk"
           }
         }
       }
     },
-    "stat.health": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Health"
+    "stat.health" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Health"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sağlık"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sağlık"
           }
         }
       }
     },
-    "stat.intelligence": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smarts"
+    "stat.intelligence" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smarts"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zekâ"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zekâ"
           }
         }
       }
     },
-    "stat.money": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Money"
+    "stat.money" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Money"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Para"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para"
           }
         }
       }
     },
-    "stat.social": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Social"
+    "stat.social" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Social"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sosyal"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sosyal"
           }
         }
       }
     },
-    "summary.age %lld": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Age %lld"
+    "summary.age %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age %lld"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yaş %lld"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaş %lld"
           }
         }
       }
     },
-    "summary.backToMenu": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Back to Menu"
+    "summary.backToMenu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to Menu"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menüye Dön"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menüye Dön"
           }
         }
       }
     },
-    "summary.finalStats": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Closing Numbers"
+    "summary.finalStats" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Closing Numbers"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kapanış Değerleri"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapanış Değerleri"
           }
         }
       }
     },
-    "summary.newLife": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "One More Life"
+    "summary.newLife" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One More Life"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bir Hayat Daha"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir Hayat Daha"
           }
         }
       }
     },
-    "summary.production": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "An İşıksoft Production"
+    "summary.production" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An İşıksoft Production"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bir İşıksoft Yapımı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir İşıksoft Yapımı"
           }
         }
       }
     },
-    "summary.roles": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cast of Roles"
+    "summary.roles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cast of Roles"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rol Listesi"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rol Listesi"
           }
         }
       }
     },
-    "summary.scenes": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unforgettable Scenes"
+    "summary.scenes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unforgettable Scenes"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unutulmaz Sahneler"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unutulmaz Sahneler"
           }
         }
       }
     },
-    "summary.score": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Life Score"
+    "summary.score" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Life Score"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hayat Puanı"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayat Puanı"
           }
         }
       }
     },
-    "summary.share": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Share the Credits Card"
+    "summary.share" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share the Credits Card"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jenerik Kartını Paylaş"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenerik Kartını Paylaş"
           }
         }
       }
     },
-    "timeline.year %lld %@": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Age %1$lld · %2$@"
+    "timeline.year %lld %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age %1$lld · %2$@"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yaş %1$lld · %2$@"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaş %1$lld · %2$@"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
