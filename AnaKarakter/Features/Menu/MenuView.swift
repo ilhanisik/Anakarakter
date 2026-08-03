@@ -102,9 +102,7 @@ struct MenuView: View {
                 Text(daily.hasPlayedToday ? "menu.daily.review" : "menu.daily.play")
                     .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .tint(DesignTokens.Accent.gold)
+            .buttonStyle(GoldButtonStyle())
             .padding(.top, DesignTokens.Spacing.xSmall)
         }
         .padding(DesignTokens.Spacing.medium)

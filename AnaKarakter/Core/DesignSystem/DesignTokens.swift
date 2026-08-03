@@ -68,8 +68,15 @@ enum DesignTokens {
     /// Anlam taşıyan vurgular. Kırmızı bilinçli olarak YOK: olumsuz olay
     /// "hata" değil hayatın bir sahnesidir, turuncu/koyu tonla anlatılır.
     enum Accent {
-        /// Başarı, rol, kazanım.
+        /// Başarı, rol, kazanım — **metin ve ikon** için. Aydınlık zeminde
+        /// okunabilir olsun diye koyudur.
         static let gold = Color("GoldAccent")
+        /// Aynı altının **dolgu** hâli: canlı, marka rengi. Üstüne beyaz
+        /// değil `onGold` yazılır — marka rengini karartmak yerine metni
+        /// koyulaştırmak hem kontrastı hem kimliği korur.
+        static let goldFill = Color("GoldFill")
+        /// `goldFill` üzerindeki metin/ikon rengi (kontrast ≥ 8:1).
+        static let onGold = Color("OnGold")
         /// Olumsuz sonuç.
         static let warn = Color("WarnAccent")
         /// Nötr/sakin seçim.

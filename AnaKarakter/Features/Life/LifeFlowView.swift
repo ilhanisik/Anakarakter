@@ -233,9 +233,7 @@ struct LifeFlowView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(DesignTokens.Accent.gold)
+                .buttonStyle(GoldButtonStyle())
             }
         case .decision:
             VStack(spacing: DesignTokens.Spacing.small) {

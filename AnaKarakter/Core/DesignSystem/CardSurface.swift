@@ -73,3 +73,26 @@ struct PressableButtonStyle: ButtonStyle {
             .animation(.spring(response: 0.25, dampingFraction: 0.7), value: configuration.isPressed)
     }
 }
+
+/// Birincil eylem düğmesi — canlı altın dolgu, koyu metin.
+///
+/// `.borderedProminent` + `.tint(gold)` beyaz metin çiziyordu; kontrastı
+/// tutturmak için altını karartmak gerekiyordu ve marka rengi kayboluyordu.
+/// Metni koyulaştırmak aynı sorunu çözer, rengi de korur (kontrast ≥ 8:1).
+struct GoldButtonStyle: ButtonStyle {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .foregroundStyle(DesignTokens.Accent.onGold)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, DesignTokens.Spacing.medium)
+            .background {
+                RoundedRectangle(cornerRadius: DesignTokens.Radius2.action, style: .continuous)
+                    .fill(DesignTokens.Accent.goldFill)
+            }
+            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.97 : 1)
+            .animation(.spring(response: 0.25, dampingFraction: 0.7), value: configuration.isPressed)
+    }
+}
