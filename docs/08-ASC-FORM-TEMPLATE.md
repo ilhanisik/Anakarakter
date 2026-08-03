@@ -239,3 +239,14 @@ başlatılmaz ve ödüllü içerik reklamsız verilir.
 - 2026-08-03 — Mağaza adı 30 karakteri aşıyor; kısaltma SAHİP kararına bırakıldı.
 - 2026-08-03 — Anahtar kelimelerde rakip marka adı kullanılmayacak (App Store kuralı).
 - 2026-08-03 — Ekran görüntülerinde reklam gösterilmeyecek: reklam ürünün vaadi değil, finansmanı.
+- 2026-08-04 — 6.9" seti 5 görüntüyle yüklendi (01, 02, 03, 05, 06). **4 numara
+  (jenerik kartı tam ekran) çekilemedi:** `CreditsCardView` yalnız
+  `ShareCardRenderer` içinde ekran dışı üretiliyor, uygulamada tam ekran
+  gösterimi YOK. Tek yol Quick Look önizlemesi ve orada sistem başlığı
+  (`.com.apple.Foundation.NSItem…`) ile işaretleme çubuğu görünüyor. Kartı
+  tuvale yapıştırmak "gerçek oyun içi görüntü, mockup yok" kuralını çiğnerdi.
+  Açık iş: oyuncu kartını paylaşmadan göremiyor — tam ekran kart önizlemesi
+  eklenince 4 numara da çekilir.
+- 2026-08-04 — Mağaza görüntüleri 01/02 Release, 03/05 Debug derlemesiyle çekilir:
+  Debug'daki geçici ⏩ kısayolu araç çubuğunda görünüyor ve yıl akışı
+  ekranlarına giriyor. Hepsi `--uitest-clean` ile (reklamsız ikiz).

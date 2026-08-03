@@ -208,8 +208,13 @@ final class LifeFlowViewModel {
         while !isEnded, guardCounter < 5_000 {
             guardCounter += 1
             if case .decision = phase {
-                guard let first = eligibleChoices.first else { break }
-                choose(first.id)
+                // En cesur seçenek: mağaza görüntüsü oyunun vaadini
+                // ("cesur oyna") göstermeli; hep ilkini seçmek AKE 0 ile
+                // biten sıradan bir hayat üretiyordu.
+                guard let boldest = eligibleChoices.max(by: {
+                    $0.boldness.akeDelta < $1.boldness.akeDelta
+                }) else { break }
+                choose(boldest.id)
             } else {
                 liveYear()
             }
