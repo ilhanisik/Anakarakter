@@ -18,7 +18,7 @@ struct SettingsView: View {
             Section("settings.purchases") {
                 if viewModel.removeAdsPurchased {
                     Label("settings.removeAds.owned", systemImage: "checkmark.seal.fill")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(DesignTokens.TextColor.secondary)
                 } else {
                     Button {
                         Task { await viewModel.purchaseRemoveAds() }

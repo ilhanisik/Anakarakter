@@ -43,13 +43,17 @@ extension Stat {
     }
 
     /// Dekoratif renk — bilgi her zaman ikon + metin + sayı ile taşınır.
+    /// Semantik stat rengi. Ham sistem renkleri (`.red`, `.orange`…)
+    /// kullanılmaz: hem token disiplinine aykırı hem de aydınlık zeminde
+    /// kontrastı yetersiz (Faz 5 erişilebilirlik denetiminde düştüler).
+    /// Renk tek başına bilgi taşımaz; ikon + ad + sayı her zaman yanındadır.
     var tint: Color {
         switch self {
-        case .health: .red
-        case .happiness: .orange
-        case .intelligence: .blue
-        case .social: .green
-        case .ake: .purple
+        case .health: Color("StatHealth")
+        case .happiness: Color("StatHappiness")
+        case .intelligence: Color("StatIntelligence")
+        case .social: Color("StatSocial")
+        case .ake: Color("StatAKE")
         }
     }
 }

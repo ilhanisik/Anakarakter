@@ -23,11 +23,11 @@ struct StatPanelView: View {
             }
             HStack(spacing: DesignTokens.Spacing.small) {
                 Image(systemName: "turkishlirasign.circle.fill")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(DesignTokens.TextColor.secondary)
                     .accessibilityHidden(true)
                 Text("stat.money")
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(DesignTokens.TextColor.secondary)
                 Spacer(minLength: DesignTokens.Spacing.small)
                 Text(stats.money.liraFormatted)
                     .font(.subheadline.weight(.semibold))
@@ -53,7 +53,7 @@ private struct StatGaugeView: View {
                     .accessibilityHidden(true)
                 Text(stat.localizedName)
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(DesignTokens.TextColor.secondary)
                     .lineLimit(1)
                 Spacer(minLength: 0)
                 // Sayı yerinde değişmez, sayaç gibi döner — değişim görülür.

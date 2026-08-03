@@ -81,8 +81,9 @@ private struct StatChip: View {
                 .font(.subheadline.weight(.semibold))
                 .monospacedDigit()
                 .contentTransition(.numericText())
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
+                // minimumScaleFactor KULLANILMAZ: metni küçültmek erişilebilirlik
+                // denetiminde "kırpılmış metin" sayılır. Çip yerine genişler.
+                .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
         }
         .padding(.vertical, DesignTokens.Spacing.small)

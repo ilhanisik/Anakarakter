@@ -53,7 +53,7 @@ struct LifeSummaryView: View {
                                 VStack(alignment: .leading, spacing: DesignTokens.Spacing.xSmall) {
                                     Text("summary.age \(scene.age)")
                                         .font(DesignTokens.Typography.creditsCaption)
-                                        .foregroundStyle(.secondary)
+                                        .foregroundStyle(DesignTokens.TextColor.secondary)
                                     Text(scene.text.resolved)
                                         .font(DesignTokens.Typography.sceneBody)
                                         .fixedSize(horizontal: false, vertical: true)
@@ -102,17 +102,17 @@ struct LifeSummaryView: View {
             Text(String(localized: "summary.production").uppercased())
                 .font(DesignTokens.Typography.creditsCaption)
                 .kerning(2)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
             Text(card.name)
                 .font(DesignTokens.Typography.displayName)
                 .multilineTextAlignment(.center)
             Text(verbatim: "\(card.birthYear)–\(card.finalYear)")
                 .font(DesignTokens.Typography.sceneBody)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .monospacedDigit()
             Text(card.neighborhood)
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
         }
         .accessibilityElement(children: .combine)
     }
@@ -121,7 +121,7 @@ struct LifeSummaryView: View {
         VStack(spacing: DesignTokens.Spacing.xSmall) {
             Text("summary.score")
                 .font(DesignTokens.Typography.creditsCaption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
             Text(card.lifeScore.formatted())
                 .font(DesignTokens.Typography.score)
                 .monospacedDigit()

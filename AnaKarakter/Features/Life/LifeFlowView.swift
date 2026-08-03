@@ -169,7 +169,7 @@ struct LifeFlowView: View {
                 .multilineTextAlignment(.center)
             Text("life.opening.body")
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .multilineTextAlignment(.center)
         }
         .padding(DesignTokens.Spacing.large)
@@ -292,7 +292,7 @@ private struct TimelineItemView: View {
                 if let deltas {
                     Text(deltas)
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(DesignTokens.TextColor.secondary)
                         .monospacedDigit()
                 }
             }
@@ -302,7 +302,7 @@ private struct TimelineItemView: View {
             VStack(spacing: DesignTokens.Spacing.xSmall) {
                 Text("life.creditsRoll")
                     .font(DesignTokens.Typography.creditsCaption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(DesignTokens.TextColor.secondary)
                 Text(verbatim: "\(name) (\(birthYear)–\(finalYear))")
                     .font(DesignTokens.Typography.sceneBody.weight(.semibold))
             }

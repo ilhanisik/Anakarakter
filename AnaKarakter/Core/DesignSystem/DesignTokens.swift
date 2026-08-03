@@ -86,6 +86,13 @@ enum DesignTokens {
         }
     }
 
+    /// Metin renkleri. Sistemin `.secondary`'si özel (krem) zeminimizde
+    /// 3.4:1'e düşüyor ve erişilebilirlik denetiminden geçmiyor; ikincil
+    /// metin bu token'ı kullanır.
+    enum TextColor {
+        static let secondary = Color("TextSecondary")
+    }
+
     enum Radius2 {
         /// Büyük floating kart — brief: "büyük, yuvarlatılmış köşeler".
         static let hero: CGFloat = 28

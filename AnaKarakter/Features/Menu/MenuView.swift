@@ -34,7 +34,7 @@ struct MenuView: View {
             Text(String(localized: "summary.production").uppercased())
                 .font(DesignTokens.Typography.creditsCaption)
                 .kerning(3)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .entersScene(delay: 0.05)
 
             Text("menu.title")
@@ -48,7 +48,7 @@ struct MenuView: View {
 
             Text("menu.tagline")
                 .font(DesignTokens.Typography.sceneBody)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, DesignTokens.Spacing.medium)
                 .entersScene(delay: 0.26)
@@ -82,13 +82,13 @@ struct MenuView: View {
 
             Text(daily.hasPlayedToday ? "menu.daily.done" : "menu.daily.invite")
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .fixedSize(horizontal: false, vertical: true)
 
             if daily.streak.graceRemaining > 0 {
                 Label("menu.daily.grace \(daily.streak.graceRemaining)", systemImage: "heart.fill")
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(DesignTokens.TextColor.secondary)
             }
 
             Button {

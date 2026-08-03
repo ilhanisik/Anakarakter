@@ -65,8 +65,8 @@ struct LifePosterView: View {
                     .font(DesignTokens.Typography.chapter)
                     .kerning(1.5)
                     .foregroundStyle(.white)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
             }
             .padding(DesignTokens.Spacing.small)
         }
@@ -78,7 +78,7 @@ struct LifePosterView: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: "\(life.card.birthYear)–\(life.card.finalYear)")
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DesignTokens.TextColor.secondary)
                 .monospacedDigit()
 
             HStack(spacing: DesignTokens.Spacing.xSmall) {
@@ -90,7 +90,7 @@ struct LifePosterView: View {
                 if life.mode == .daily {
                     Image(systemName: "calendar")
                         .font(.caption2)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(DesignTokens.TextColor.secondary)
                         .accessibilityHidden(true)
                 }
             }
